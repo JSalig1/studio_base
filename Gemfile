@@ -10,6 +10,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.2'
   gem 'byebug'
@@ -18,5 +20,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'factory_girl_rails'
   gem 'capybara', '~> 2.3.0'
+  gem 'shoulda-matchers', require: false
 end

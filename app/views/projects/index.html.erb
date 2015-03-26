@@ -1,0 +1,10 @@
+<h1>StudioBase</h1>
+
+<div>
+  <ul>Projects</ul>
+  <% @projects.each do |project| %>
+    <li><%= project.project_number %></li>
+  <% end %>
+</div>
+
+<%= link_to "Log New Project", new_project_path %>
