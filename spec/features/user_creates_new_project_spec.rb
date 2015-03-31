@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'user creates new project' do
   scenario 'with valid data' do
     visit projects_path
-    click_on('Log New Project')
+    click_on('New Project')
     fill_in 'Project Number',  with: '12345'
     click_on('Create Project')
 
@@ -12,7 +12,7 @@ feature 'user creates new project' do
 
   scenario 'with invalid data' do
     visit projects_path
-    click_on('Log New Project')
+    click_on('New Project')
     fill_in 'Project Number', with: ''
     click_on('Create Project')
 

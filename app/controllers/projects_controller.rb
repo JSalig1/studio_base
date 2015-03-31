@@ -8,19 +8,38 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(project_params)
-    if @project.save
+    project = Project.new(project_params)
+    if project.save
       redirect_to projects_path
     else
+      @project = project
       render :new
     end
   end
 
   def show
-    @project = Project.find(params[:id])
+    @project = find_project
+  end
+  
+  def edit
+    @project = find_project
+  end
+  
+  def update
+    project = find_project
+    if project.update_attributes(project_params)
+      redirect_to project
+    else
+      @project = project
+      render :edit
+    end
   end
 
   private
+  
+  def find_project
+    Project.find(params[:id])
+  end
 
   def project_params
     params.require(:project).permit(:project_number)
