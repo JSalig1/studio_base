@@ -23,4 +23,5 @@ group :test do
   gem 'factory_girl_rails'
   gem 'capybara', '~> 2.3.0'
   gem 'shoulda-matchers', require: false
+  gem 'database_cleaner'
 end

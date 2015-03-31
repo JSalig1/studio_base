@@ -7,7 +7,7 @@ feature 'user creates new project' do
     fill_in 'Project Number',  with: '12345'
     click_on('Create Project')
 
-    expect(page).to have_css 'li', text: '12345'
+    expect(page).to have_content('12345')
   end
 
   scenario 'with invalid data' do

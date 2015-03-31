@@ -1,3 +1,3 @@
 class Project < ActiveRecord::Base
-  validates :project_number, presence: true
+  validates :project_number, presence: true, uniqueness: true
 end
