@@ -23,9 +23,12 @@ ActiveRecord::Schema.define(version: 20150331200025) do
   end
 
   create_table "projects", force: :cascade do |t|
+    t.integer  "archive_id"
     t.string   "project_number", null: false
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
+
+  add_index "projects", ["archive_id"], name: "index_projects_on_archive_id", using: :btree
 
 end

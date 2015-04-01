@@ -1,1 +1,10 @@
-<%= @archive.archive_number %>
+<h2><%= @archive.archive_number %></h2>
+
+<div>
+  <h3>Archived Projects</h3>
+  <ul>
+    <% @projects.each do |project| %>
+      <li><%= "#{project.project_number}" %></li>
+    <% end %>
+  </ul>
+</div>

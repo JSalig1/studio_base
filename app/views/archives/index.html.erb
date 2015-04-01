@@ -1,6 +1,8 @@
 <div>
-  <ul>Archives</ul>
-  <% @archives.each do |archive| %>
-    <li><%= link_to "#{archive.archive_number}", archive %></li>
-  <% end %>
+  <h2>Archives</h2>
+  <ul>
+    <% @archives.each do |archive| %>
+      <li><%= link_to "#{archive.archive_number}", archive %></li>
+    <% end %>
+  </ul>
 </div>

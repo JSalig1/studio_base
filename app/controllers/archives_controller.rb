@@ -19,6 +19,7 @@ class ArchivesController < ApplicationController
 
   def show
     @archive = Archive.find(params[:id])
+    @projects = @archive.projects
   end
 
   private

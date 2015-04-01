@@ -1,5 +1,9 @@
-<%= form_for @project do |form| %>
-  <%= render 'form_errors', target: @project %>
-  <%= form.text_field :project_number, placeholder: 'Project Number' %>
-  <%= form.submit 'Update Project' %>
-<% end %>
+<h2>Edit Project</h2>
+
+<div>
+  <%= form_for @project do |form| %>
+    <%= render 'form_errors', target: @project %>
+    <%= form.text_field :project_number, placeholder: 'Project Number' %>
+    <%= form.submit 'Update Project' %>
+  <% end %>
+</div>
