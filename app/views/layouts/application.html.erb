@@ -7,8 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <h1>StudioBase</h1>
+  <%= link_to "New Project", new_project_path %>
+  <%= link_to "New Archive", new_archive_path %>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>

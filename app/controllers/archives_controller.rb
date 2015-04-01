@@ -1,8 +1,12 @@
 class ArchivesController < ApplicationController
+  def index
+    @archives = Archive.all
+  end
+
   def new
     @archive = Archive.new
   end
-  
+
   def create
     archive = Archive.new(archive_params)
     if archive.save
@@ -12,9 +16,13 @@ class ArchivesController < ApplicationController
       render :new
     end
   end
-  
+
+  def show
+    @archive = Archive.find(params[:id])
+  end
+
   private
-  
+
   def archive_params
     params.require(:archive).permit(:archive_number)
   end
