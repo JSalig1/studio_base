@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :project do
-    project_number '1234'
+    project_number 'project_number'
   end
 
   factory :archive do
-    archive_number '21'
+    archive_number 'archive_number'
   end
 end

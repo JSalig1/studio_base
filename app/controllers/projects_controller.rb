@@ -10,7 +10,7 @@ class ProjectsController < ApplicationController
   def create
     project = Project.new(project_params)
     if project.save
-      redirect_to projects_path
+      redirect_to project
     else
       @project = project
       render :new
@@ -42,6 +42,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:project_number)
+    params.require(:project).permit(:project_number, :archive_id)
   end
 end

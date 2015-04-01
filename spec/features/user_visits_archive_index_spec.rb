@@ -11,7 +11,7 @@ feature 'user visits archive index' do
   end
 
   scenario 'they can view individual archives' do
-    create(:archive, archive_number: 'archive_number')
+    create(:archive)
     visit archives_path
 
     click_link('archive_number')

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'user visits an individual project' do
   scenario 'they can edit the project details' do
-    project = create(:project, project_number: 'old project number')
+    project = create(:project)
     visit project_path(project)
 
     click_link('Edit')

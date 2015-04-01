@@ -10,7 +10,7 @@ class ArchivesController < ApplicationController
   def create
     archive = Archive.new(archive_params)
     if archive.save
-      redirect_to projects_path
+      redirect_to archive
     else
       @archive = archive
       render :new

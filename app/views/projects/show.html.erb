@@ -1,3 +1,7 @@
 <h2><%= @project.project_number %></h2>
 
-<%= link_to 'Edit', edit_project_path(@project) %>
+<p>Archive: <%= @project.archive_location %></p>
+
+<div>
+  <%= link_to 'Edit', edit_project_path(@project) %>
+</div>
