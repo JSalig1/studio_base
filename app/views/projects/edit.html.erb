@@ -12,7 +12,7 @@
 
 <div>
   <%= form_for @project do |form| %>
-    <%= form.collection_select(:archive_id, Archive.all, :id, :archive_number) %>
+    
     <%= form.submit 'Add to Archive' %>
   <% end %>
 </div>

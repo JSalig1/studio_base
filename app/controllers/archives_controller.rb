@@ -22,6 +22,11 @@ class ArchivesController < ApplicationController
     @projects = @archive.projects
   end
 
+  def edit
+    @archive = Archive.find(params[:id])
+    @project_archive = @archive.make_project_entry
+  end
+
   private
 
   def archive_params

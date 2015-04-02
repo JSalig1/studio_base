@@ -6,10 +6,14 @@ feature 'user manages project to archive relations' do
     project = create(:project, project_number: 'project_number')
 
     visit project_path(project)
-    click_on('Edit')
-    select 'archive_number', from: 'project_archive_id'
     click_on('Add to Archive')
+    select 'archive_number', from: 'project_archive_archive_id'
+    click_on('Add to Archive')
+    visit project_path(project)
 
+    expect(page).to have_content('archive_number')
+    click_on('archive_number')
     expect(page).to have_content('project_number')
   end
+
 end

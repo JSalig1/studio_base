@@ -1,0 +1,8 @@
+<div>
+  <h2>Archive Drives</h2>
+  <ul>
+    <% @drives.each do |drive| %>
+      <li><%= link_to "#{drive.number}", drive %></li>
+    <% end %>
+  </ul>
+</div>

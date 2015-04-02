@@ -1,0 +1,9 @@
+<h2>New Archive Drive</h2>
+
+<div>
+  <%= form_for @drive do |drive| %>
+    <%= render 'form_errors', target: @drive %>
+    <%= form.text_field :number, placeholder: 'Archive Number' %>
+    <%= form.submit 'Create Archive' %>
+  <% end %>
+</div>

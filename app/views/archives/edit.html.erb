@@ -1,0 +1,8 @@
+<h2>Add Project to Archive</h2>
+
+<div>
+  <%= form_for @project_archive do |form| %>
+    <%= form.collection_select(:project_id, Project.all, :id, :project_number) %>
+    <%= form.submit 'Add to Archive' %>
+  <% end %>
+</div>

@@ -1,7 +1,12 @@
 <h2><%= @project.project_number %></h2>
 
-<p>Archive: <%= @project.archive_location %></p>
-
 <div>
+  <h3>Archived in:</h3>
+  <ul>
+    <% @archives.each do |archive| %>
+      <li><%= link_to "#{archive.archive_number}", archive %></li>
+    <% end %>
+  </ul>
+  <%= link_to 'Add to Archive', new_project_archive_path(project_id: @project) %>
   <%= link_to 'Edit', edit_project_path(@project) %>
 </div>

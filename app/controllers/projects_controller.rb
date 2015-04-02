@@ -19,6 +19,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = find_project
+    @archives = @project.archives
   end
   
   def edit
@@ -42,6 +43,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:project_number, :archive_id)
+    params.require(:project).permit(:project_number)
   end
 end

@@ -1,12 +1,13 @@
 class Project < ActiveRecord::Base
   validates :project_number, presence: true, uniqueness: true
-  belongs_to :archive
+  has_many :project_archives
+  has_many :archives, through: :project_archives
   
   def archive_location
     if archive == nil
       'not yet archived'
     else
-      archive.archive_number
+      'archive.archive_number'
     end
   end
 end

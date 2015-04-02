@@ -1,0 +1,5 @@
+<%= form_for @project_archive do |form| %>
+  <%= form.hidden_field :project_id, value: params[:project_id] %>
+  <%= form.collection_select :archive_id, Archive.all, :id, :archive_number, include_blank: true %>
+  <%= form.submit "Add to Archive" %>
+<% end %>
