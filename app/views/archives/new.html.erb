@@ -1,5 +1,5 @@
-<%= form_for @project_archive do |form| %>
-  <%= render 'form_errors', target: @project_archive %>
+<%= form_for @archive do |form| %>
+  <%= render 'form_errors', target: @archive %>
   <%= form.hidden_field :project_id, value: params[:project_id] %>
   <%= form.collection_select :drive_id, Drive.all, :id, :number, include_blank: true %>
   <%= form.submit "Add Archive" %>

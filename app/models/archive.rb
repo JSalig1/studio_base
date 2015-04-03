@@ -1,4 +1,4 @@
-class ProjectArchive < ActiveRecord::Base
+class Archive < ActiveRecord::Base
   belongs_to :project
   belongs_to :drive
 

@@ -1,6 +1,6 @@
-class CreateProjectArchives < ActiveRecord::Migration
+class CreateArchives < ActiveRecord::Migration
   def change
-    create_table :project_archives do |t|
+    create_table :archives do |t|
       t.belongs_to :project, index: true
       t.belongs_to :drive, index: true
 

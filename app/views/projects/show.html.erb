@@ -7,6 +7,6 @@
       <li><%= link_to "#{drive.number}", drive %></li>
     <% end %>
   </ul>
-  <%= link_to 'Add Archive', new_project_archive_path(project_id: @project) %>
+  <%= link_to 'Add Archive', new_archive_path(project_id: @project) %>
   <%= link_to 'Edit', edit_project_path(@project) %>
 </div>
