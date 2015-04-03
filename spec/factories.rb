@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :project do
-    project_number 'project_number'
+    job_number 'project_number'
   end
 
   factory :drive do

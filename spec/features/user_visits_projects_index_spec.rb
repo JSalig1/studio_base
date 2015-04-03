@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'user visits projects index' do
   scenario 'they can see all the projects listed' do
-    create(:project, project_number: 'a_project_number')
-    create(:project, project_number: 'another_project_number')
+    create(:project, job_number: 'a_project_number')
+    create(:project, job_number: 'another_project_number')
     visit projects_path
 
     expect(page).to have_content('a_project_number')

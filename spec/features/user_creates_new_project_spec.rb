@@ -4,16 +4,16 @@ feature 'user creates new project' do
   scenario 'with valid data' do
     visit projects_path
     click_on('New Project')
-    fill_in 'Project Number',  with: 'project_number'
+    fill_in 'Job Number',  with: 'job_number'
     click_on('Create Project')
 
-    expect(page).to have_content('project_number')
+    expect(page).to have_content('job_number')
   end
 
   scenario 'with invalid data' do
     visit projects_path
     click_on('New Project')
-    fill_in 'Project Number', with: ''
+    fill_in 'Job Number', with: ''
     click_on('Create Project')
 
     expect(page).to have_content("can't be blank")

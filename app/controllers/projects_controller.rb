@@ -21,11 +21,11 @@ class ProjectsController < ApplicationController
     @project = find_project
     @drives = @project.drives
   end
-  
+
   def edit
     @project = find_project
   end
-  
+
   def update
     project = find_project
     if project.update_attributes(project_params)
@@ -37,12 +37,12 @@ class ProjectsController < ApplicationController
   end
 
   private
-  
+
   def find_project
     Project.find(params[:id])
   end
 
   def project_params
-    params.require(:project).permit(:project_number)
+    params.require(:project).permit(:job_number)
   end
 end

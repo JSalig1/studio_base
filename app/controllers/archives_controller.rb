@@ -12,7 +12,7 @@ class ArchivesController < ApplicationController
       render :new
     end
   end
-  
+
 private
 
   def archive_params

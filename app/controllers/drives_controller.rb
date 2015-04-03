@@ -18,16 +18,19 @@ class DrivesController < ApplicationController
   end
 
   def show
-    @drive = Drive.find(params[:id])
+    @drive = find_drive
     @projects = @drive.projects
   end
 
   def edit
-    @drive = Drive.find(params[:id])
-    @project_archive = @archive.make_project_entry
+    @drive = find_drive
   end
 
   private
+
+  def find_drive
+    Drive.find(params[:id])
+  end
 
   def drive_params
     params.require(:drive).permit(:number)

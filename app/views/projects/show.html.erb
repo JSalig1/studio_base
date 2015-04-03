@@ -1,4 +1,4 @@
-<h2><%= @project.project_number %></h2>
+<h2><%= @project.job_number %></h2>
 
 <div>
   <h3>Archived in:</h3>
@@ -7,6 +7,6 @@
       <li><%= link_to "#{drive.number}", drive %></li>
     <% end %>
   </ul>
-  <%= link_to 'Add Archive', new_archive_path(project_id: @project) %>
   <%= link_to 'Edit', edit_project_path(@project) %>
+  <%= link_to 'Add Archive', new_archive_path(project_id: @project) %>
 </div>

@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'user creates project archive' do
   scenario 'and assigns it to a drive' do
     drive = create(:drive, number: 'drive_number')
-    project = create(:project, project_number: 'project_number')
+    project = create(:project, job_number: 'project_number')
 
     visit project_path(project)
     click_on('Add Archive')

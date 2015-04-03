@@ -6,9 +6,9 @@ feature 'user visits an individual project' do
     visit project_path(project)
 
     click_link('Edit')
-    fill_in 'Project Number',  with: 'new project number'
+    fill_in 'Job Number',  with: 'new job number'
     click_on('Update Project')
 
-    expect(page).to have_content('new project number')
+    expect(page).to have_content('new job number')
   end
 end
