@@ -16,20 +16,20 @@ ActiveRecord::Schema.define(version: 20150401201410) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "archives", force: :cascade do |t|
-    t.string   "archive_number", null: false
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
-  create_table "project_archives", force: :cascade do |t|
-    t.integer  "project_id"
-    t.integer  "archive_id"
+  create_table "drives", force: :cascade do |t|
+    t.string   "number",     null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "project_archives", ["archive_id"], name: "index_project_archives_on_archive_id", using: :btree
+  create_table "project_archives", force: :cascade do |t|
+    t.integer  "project_id"
+    t.integer  "drive_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "project_archives", ["drive_id"], name: "index_project_archives_on_drive_id", using: :btree
   add_index "project_archives", ["project_id"], name: "index_project_archives_on_project_id", using: :btree
 
   create_table "projects", force: :cascade do |t|

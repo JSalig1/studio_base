@@ -1,9 +1,0 @@
-<h2>New Archive</h2>
-
-<div>
-  <%= form_for @archive do |form| %>
-    <%= render 'form_errors', target: @archive %>
-    <%= form.text_field :archive_number, placeholder: 'Archive Number' %>
-    <%= form.submit 'Create Archive' %>
-  <% end %>
-</div>

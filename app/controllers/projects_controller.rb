@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = find_project
-    @archives = @project.archives
+    @drives = @project.drives
   end
   
   def edit

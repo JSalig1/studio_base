@@ -3,10 +3,10 @@
 <div>
   <h3>Archived in:</h3>
   <ul>
-    <% @archives.each do |archive| %>
-      <li><%= link_to "#{archive.archive_number}", archive %></li>
+    <% @drives.each do |drive| %>
+      <li><%= link_to "#{drive.number}", drive %></li>
     <% end %>
   </ul>
-  <%= link_to 'Add to Archive', new_project_archive_path(project_id: @project) %>
+  <%= link_to 'Add Archive', new_project_archive_path(project_id: @project) %>
   <%= link_to 'Edit', edit_project_path(@project) %>
 </div>

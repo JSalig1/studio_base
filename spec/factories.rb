@@ -3,7 +3,7 @@ FactoryGirl.define do
     project_number 'project_number'
   end
 
-  factory :archive do
-    archive_number 'archive_number'
+  factory :drive do
+    number 'drive_number'
   end
 end

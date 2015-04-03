@@ -1,8 +1,9 @@
 class ProjectArchive < ActiveRecord::Base
   belongs_to :project
-  belongs_to :archive
+  belongs_to :drive
 
   validates :project_id, presence: true
-  validates :archive_id, presence: true
-  validates :project_id, uniqueness: { scope: :archive_id }
+  validates :drive_id, presence: true
+
+  validates :project_id, uniqueness: { scope: :drive_id }
 end

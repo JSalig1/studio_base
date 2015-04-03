@@ -5,13 +5,17 @@ class ProjectArchivesController < ApplicationController
 
   def create
     project_archive = ProjectArchive.new(project_archive_params)
-    project_archive.save
-    redirect_to root_path
+    if project_archive.save
+      redirect_to project_archive.project
+    else
+      @project_archive = project_archive
+      render :new
+    end
   end
   
 private
 
   def project_archive_params
-    params.require(:project_archive).permit(:archive_id, :project_id)
+    params.require(:project_archive).permit(:archive_id, :project_id, :drive_id)
   end
 end
