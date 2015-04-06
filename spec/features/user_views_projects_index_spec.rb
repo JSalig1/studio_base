@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature 'user visits projects index' do
-  scenario 'they can see all the projects listed' do
+feature 'user views project index' do
+  scenario 'they can see all projects listed' do
     create(:project, job_number: 'a_project_number')
     create(:project, job_number: 'another_project_number')
     visit projects_path

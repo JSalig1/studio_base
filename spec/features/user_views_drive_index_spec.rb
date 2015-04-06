@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature 'user visits drive index where' do
-  scenario 'they can see all the drive listed' do
+feature 'user views drive index' do
+  scenario 'they can see all the drives listed' do
     create(:drive, number: 'a_drive_number')
     create(:drive, number: 'another_drive_number')
     visit drives_path
