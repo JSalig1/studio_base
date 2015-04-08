@@ -1,6 +1,7 @@
 class ArchivesController < ApplicationController
   def new
     @archive = Archive.new
+    @project = Project.find(params[:project_id])
   end
 
   def create

@@ -1,6 +1,7 @@
 #{$all-button-inputs},
 button {
   @include appearance(none);
+
   -webkit-font-smoothing: antialiased;
   background-color: $action-color;
   border-radius: $base-border-radius;
@@ -16,7 +17,14 @@ button {
   text-decoration: none;
   user-select: none;
   vertical-align: middle;
+  text-align: center;
   white-space: nowrap;
+  margin-top: .3em;
+  margin-bottom: .3em;
+  position: relative;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%);
 
   &:hover,
   &:focus {
@@ -27,5 +35,9 @@ button {
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
+  }
+
+  a {
+    color: #fff;
   }
 }

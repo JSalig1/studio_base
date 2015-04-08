@@ -1,8 +1,24 @@
-<div>
-  <h2>Archive Drives</h2>
-  <ul>
-    <% @drives.each do |drive| %>
-      <li><%= link_to "#{drive.number}", drive %></li>
-    <% end %>
-  </ul>
-</div>
+<section class="view">
+  <div>
+    <h2>Archive Drives</h2>
+    <table class="table-minimal">
+      <thead>
+        <tr>
+          <th>Number</th>
+          <th>Type</th>
+          <th>Cloned</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @drives.each do |drive| %>
+          <tr>
+            <td><%= link_to "#{drive.number}", drive %></td>
+            <td>{archive type}</td>
+            <td>NO</td>
+            <td><button><%= link_to "View", drive %></button></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>

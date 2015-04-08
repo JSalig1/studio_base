@@ -1,0 +1,30 @@
+// Nav menu
+
+nav {
+  float: right;
+}
+
+ul.navigation-menu {
+  -webkit-transform-style: preserve-3d; // stop webkit flicker
+  display: inline;
+}
+
+// The nav items
+
+ul li.nav-link {
+  display: inline;
+  line-height: $navigation-height;
+  padding-right: 0.8em;
+
+  a {
+    color: $navigation-color;
+    font-weight: 400;
+    text-decoration: none;
+    padding-right: 1em;
+
+    &:focus,
+    &:hover {
+      color: $navigation-color-hover;
+    }
+  }
+}

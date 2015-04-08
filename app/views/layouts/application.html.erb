@@ -6,12 +6,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <h1>StudioBase</h1>
-  <%= link_to "Projects", projects_path %>
-  <%= link_to "Drives", drives_path %>
-  <%= link_to "New Project", new_project_path %>
-  <%= link_to "New Drive", new_drive_path %>
+<body class="main-body">
+  <%= render 'header' %>
 
   <%= yield %>
 

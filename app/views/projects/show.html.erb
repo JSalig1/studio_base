@@ -1,12 +1,25 @@
-<h2><%= @project.job_number %></h2>
+<section class="half--wide">
+  <h2><%= @project.job_number %></h2>
 
-<div>
-  <h3>Archived in:</h3>
-  <ul>
-    <% @drives.each do |drive| %>
-      <li><%= link_to "#{drive.number}", drive %></li>
-    <% end %>
-  </ul>
-  <%= link_to 'Edit', edit_project_path(@project) %>
-  <%= link_to 'Add Archive', new_archive_path(project_id: @project) %>
-</div>
+  <div>
+    <h3>Archived in:</h3>
+    <table class="table-minimal">
+      <thead>
+        <tr>
+          <th>Number</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @drives.each do |drive| %>
+          <tr>
+            <td><%= link_to "#{drive.number}", drive %></td>
+            <td>{archive type}</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <button><%= link_to 'Add Archive', new_archive_path(project_id: @project) %></button>
+  </div>
+  <button><%= link_to 'Edit', edit_project_path(@project) %></button>
+</section>

@@ -1,10 +1,23 @@
-<h2><%= @drive.number %></h2>
+<section class="half--wide">
+  <h2><%= @drive.number %></h2>
 
-<div>
-  <h3>Archived Projects</h3>
-  <ul>
-    <% @projects.each do |project| %>
-      <li><%= link_to "#{project.job_number}", project %></li>
-    <% end %>
-  </ul>
-</div>
+  <div>
+    <h3>Archives</h3>
+    <table class="table-minimal">
+      <thead>
+        <tr>
+          <th>Project</th>
+          <th>Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @projects.each do |project| %>
+          <tr>
+            <td><%= link_to "#{project.job_number}", project %></td>
+            <td>{project number}</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>

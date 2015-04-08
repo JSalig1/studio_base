@@ -1,0 +1,38 @@
+header.navigation {
+  background-color: $navigation-background;
+  border-bottom: 1px solid darken($navigation-background, 10);
+  min-height: $navigation-height;
+  width: 100%;
+  z-index: 999;
+
+  .navigation-wrapper {
+    @include clearfix;
+    @include outer-container;
+    position: relative;
+    z-index: 9999;
+  }
+
+  .logotype {
+    @include span-columns(3);
+    font-size: $logo-font-size;
+    font-weight: 200;
+    float: left;
+    display: block;
+    line-height: $navigation-height;
+    margin: 0 auto;
+
+    .base-text {
+      color: darken(yellow, 10);
+    }
+
+    a {
+      color: $navigation-color;
+      text-decoration: none;
+
+      &:focus,
+      &:hover {
+        color: $navigation-color-hover;
+      }
+    }
+  }
+}

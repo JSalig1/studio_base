@@ -9,14 +9,14 @@ body {
 
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
+h3 {
   font-family: $heading-font-family;
-  font-size: $base-font-size;
+  font-size: $base-header-size;
   line-height: $heading-line-height;
   margin: 0 0 $small-spacing;
+  text-align: center;
+  color: $medium-gray;
+  font-weight: 200;
 }
 
 p {
@@ -24,15 +24,9 @@ p {
 }
 
 a {
-  color: $action-color;
+  color: $dark-gray;
   text-decoration: none;
   transition: color 0.1s linear;
-
-  &:active,
-  &:focus,
-  &:hover {
-    color: darken($action-color, 15%);
-  }
 
   &:active,
   &:focus {

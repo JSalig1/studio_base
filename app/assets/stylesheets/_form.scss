@@ -1,0 +1,10 @@
+.form {
+  @include outer-container;
+  @include span-columns(4);
+  @include shift(4);
+  border: $base-border;
+  border-radius: $base-border-radius;
+  background: white;
+  padding: 1em;
+  margin-top: 3em;
+}

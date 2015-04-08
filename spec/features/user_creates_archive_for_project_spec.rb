@@ -6,7 +6,7 @@ feature 'user creates project archive' do
     project = create(:project, job_number: 'project_number')
 
     visit project_path(project)
-    click_on('Add Archive')
+    click_link('Add Archive')
     select 'drive_number', from: 'archive_drive_id'
     click_on('Add Archive')
     visit project_path(project)
