@@ -1,7 +1,7 @@
 class ArchivesController < ApplicationController
   def new
-    @archive = Archive.new
     @project = Project.find(params[:project_id])
+    @archive = Archive.new
   end
 
   def create
@@ -10,6 +10,7 @@ class ArchivesController < ApplicationController
       redirect_to archive.project
     else
       @archive = archive
+      @project = Project.find(params[:project_id])
       render :new
     end
   end

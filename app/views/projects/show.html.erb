@@ -19,7 +19,7 @@
         <% end %>
       </tbody>
     </table>
-    <button><%= link_to 'Add Archive', new_archive_path(project_id: @project) %></button>
+    <button><%= link_to 'Add Archive', new_project_archive_path(@project) %></button>
   </div>
   <button><%= link_to 'Edit', edit_project_path(@project) %></button>
 </section>

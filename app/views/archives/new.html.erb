@@ -1,6 +1,6 @@
 <div class="form">
   <h2>New Project Archive</h2>
-<%= form_for @archive do |form| %>
+<%= form_for [@project, @archive] do |form| %>
   <%= render 'form_errors', target: @archive %>
   <%= form.hidden_field :project_id, value: params[:project_id] %>
   <%= form.label "Add #{@project.job_number} to:" %>
