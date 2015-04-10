@@ -8,14 +8,14 @@ fieldset {
 input,
 label,
 select {
-  display: block;
   font-family: $base-font-family;
-  font-size: $base-font-size;
+  font-size: $base-font-size * 1.2;
 }
 
 label {
-  font-weight: 600;
+  font-weight: 400;
   margin-bottom: $small-spacing / 2;
+  color: $medium-gray;
 
   &.required::after {
     content: "*";
@@ -72,7 +72,22 @@ input[type="file"] {
 }
 
 select {
-  margin-bottom: $base-spacing;
-  max-width: 100%;
+  @include appearance(none);
+  background-color: transparent;
+  border: none;
+  font-weight: 300;
+  margin-left: .5em;
   width: auto;
+
+  &:focus {
+   outline: none; 
+  }
+  option {
+    color: red;
+  }
 }
+
+.collection-select {
+  text-align: center;
+}
+

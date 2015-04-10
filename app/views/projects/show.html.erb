@@ -1,7 +1,7 @@
 <section class="half--wide">
   <h2><%= @project.job_number %></h2>
 
-  <div>
+  <div class="small-table">
     <h3>Archived in:</h3>
     <table class="table-minimal">
       <thead>
@@ -19,7 +19,7 @@
         <% end %>
       </tbody>
     </table>
-    <button><%= link_to 'Add Archive', new_project_archive_path(@project) %></button>
+    <button class='small-button'><%= link_to 'Add Archive', new_project_archive_path(@project) %></button>
   </div>
   <button><%= link_to 'Edit', edit_project_path(@project) %></button>
 </section>

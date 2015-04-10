@@ -46,4 +46,20 @@ section.half--wide {
       padding: $table-padding;
     }
   }
+
+  .table-button {
+    margin-top: 0 !important;
+  }
+}
+
+.small-table {
+  border: $base-border;
+  border-radius: $base-border-radius;
+  padding: .7em;
+  margin-bottom: 1em;
+
+  .small-button {
+    transform: scale(.7, .7) translate(-1.2em);
+    margin: 0 !important;
+  }
 }
