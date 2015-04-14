@@ -13,7 +13,10 @@
       <tbody>
         <% @drives.each do |drive| %>
           <tr>
-            <td><%= link_to "#{drive.number}", drive %></td>
+            <td>
+              <button class='new-window'><%= link_to "᎒", drive, target: '_blank' %></button>
+              <%= link_to "#{drive.number}", drive %>
+            </td>
             <td>{archive type}</td>
           </tr>
         <% end %>
