@@ -5,6 +5,9 @@ feature 'user creates new project' do
     visit projects_path
     click_on('New Project')
     fill_in 'Job Number',  with: 'job_number'
+    fill_in 'Project Name', with: 'name'
+    fill_in 'Booking Date', with: Time.now
+    fill_in 'Start Date', with: Time.now
     click_on('Create Project')
 
     expect(page).to have_content('job_number')

@@ -1,5 +1,10 @@
 <%= form_for @project do |form| %>
   <%= render 'form_errors', target: @project %>
   <%= form.text_field :job_number, placeholder: 'Job Number' %>
+  <%= form.text_field :name, placeholder: 'Project Name' %>
+  <%= form.label 'Booking Date:' %>
+  <%= form.date_field :booking_date, placeholder: 'Booking Date' %>
+  <%= form.label 'Start Date:' %>
+  <%= form.date_field :start_date, placeholder: 'Start Date' %>
   <%= form.submit %>
 <% end %>
