@@ -43,6 +43,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:job_number)
+    params.require(:project).permit(:job_number, :status)
   end
 end

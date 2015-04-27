@@ -14,7 +14,7 @@
           <tr>
             <td><%= link_to "#{project.job_number}", project %></td>
             <td>{project number}</td>
-            <td>IN PROGRESS</td>
+            <td><%= project.status %></td>
             <td><button class='table-button'><%= link_to "View", project %></button></td>
           </tr>
         <% end %>

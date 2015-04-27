@@ -6,5 +6,7 @@
   <%= form.date_field :booking_date, placeholder: 'Booking Date' %>
   <%= form.label 'Start Date:' %>
   <%= form.date_field :start_date, placeholder: 'Start Date' %>
+  <%= form.label 'Set Project Status' %>
+  <%= form.select :status, Project.statuses.keys.to_a %>
   <%= form.submit %>
 <% end %>
