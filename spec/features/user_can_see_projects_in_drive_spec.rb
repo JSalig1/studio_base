@@ -5,9 +5,9 @@ feature 'user can see what projects are in a drive' do
     project = create(:project)
     drive = create(:drive)
     drive.projects << project
-    
+
     visit drive_path(drive)
-    
-    expect(page).to have_content('project_number')
+
+    expect(page).to have_content('project_name')
   end
 end

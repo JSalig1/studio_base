@@ -10,7 +10,7 @@ feature 'user creates new project' do
     fill_in 'Start Date', with: Time.now
     click_on('Create Project')
 
-    expect(page).to have_content('job_number')
+    expect(page).to have_content('name')
   end
 
   scenario 'with invalid data' do

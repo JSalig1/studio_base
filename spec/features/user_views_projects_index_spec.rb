@@ -14,7 +14,7 @@ feature 'user views project index' do
     create(:project)
     visit projects_path
 
-    click_link('project_number')
+    click_link('project_name')
 
     expect(page).to have_content('project_number')
   end

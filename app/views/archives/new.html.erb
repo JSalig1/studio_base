@@ -4,7 +4,7 @@
     <%= render 'form_errors', target: @archive %>
     <%= form.hidden_field :project_id, value: params[:project_id] %>
     <div class='collection-select'>
-      <%= form.label "#{@project.job_number} ->" %>
+      <%= form.label "#{@project.name} ->" %>
       <%= form.collection_select :drive_id, Drive.all, :id, :number, { prompt: 'Click to Select'} %>
     </div>
     <%= form.submit "Add Archive" %>
