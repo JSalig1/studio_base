@@ -22,7 +22,9 @@ h3 {
 p,
 .form-errors {
   margin: 0 0 $small-spacing;
-  line-height: $base-line-height / 2;
+  line-height: $base-line-height;
+  color: red;
+  text-align: center;
 }
 
 a {
@@ -34,11 +36,6 @@ a {
   &:focus {
     outline: none;
   }
-}
-
-.form-errors {
-  color: red;
-  text-align: center;
 }
 
 hr {
