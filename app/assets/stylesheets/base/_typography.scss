@@ -20,7 +20,8 @@ h3 {
 }
 
 p,
-.form-errors {
+.form-errors,
+.flash-notice {
   margin: 0 0 $small-spacing;
   line-height: $base-line-height;
   color: red;

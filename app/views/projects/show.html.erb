@@ -28,4 +28,7 @@
     <button class='small-button'><%= link_to 'Add Archive', new_project_archive_path(@project) %></button>
   </div>
   <button><%= link_to 'Edit', edit_project_path(@project) %></button>
+  <div class="admin-controls">
+    <%= link_to 'Delete Project', @project, method: :delete, data: {confirm: 'Are you sure?'} %>
+  </div>
 </section>
