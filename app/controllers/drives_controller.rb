@@ -10,7 +10,7 @@ class DrivesController < ApplicationController
   def create
     drive = Drive.new(drive_params)
     if drive.save
-      redirect_to drive
+      redirect_to drives_path
     else
       @drive = drive
       render :new
@@ -33,6 +33,6 @@ class DrivesController < ApplicationController
   end
 
   def drive_params
-    params.require(:drive).permit(:number)
+    params.require(:drive).permit(:number, :category)
   end
 end

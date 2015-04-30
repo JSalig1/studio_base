@@ -8,9 +8,11 @@ feature 'user creates new project' do
     fill_in 'Project Name', with: 'name'
     fill_in 'Booking Date', with: Time.now
     fill_in 'Start Date', with: Time.now
+    select 'completed', from: 'project_status'
     click_on('Create Project')
 
     expect(page).to have_content('name')
+    expect(page).to have_content('completed')
   end
 
   scenario 'with invalid data' do

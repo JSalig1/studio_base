@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.2.0'
 
 gem 'rails', '4.2.0'
 gem 'pg'
@@ -27,4 +28,8 @@ group :test do
   gem 'capybara', '~> 2.3.0'
   gem 'shoulda-matchers', require: false
   gem 'database_cleaner'
+end
+
+group :staging, :production do
+    gem 'rails_12factor'
 end
