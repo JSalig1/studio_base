@@ -14,7 +14,7 @@
           <tr>
             <td><%= link_to "#{drive.number}", drive %></td>
             <td><%= drive.category %></td>
-            <td>NO</td>
+            <td><%= drive.redundancy %></td>
             <td><button class='table-button'><%= link_to "View", drive %></button></td>
           </tr>
         <% end %>

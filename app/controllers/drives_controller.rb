@@ -33,6 +33,6 @@ class DrivesController < ApplicationController
   end
 
   def drive_params
-    params.require(:drive).permit(:number, :category)
+    params.require(:drive).permit(:number, :category, :redundancy)
   end
 end

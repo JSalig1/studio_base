@@ -6,6 +6,7 @@ RSpec.describe Drive, type: :model do
     .with([:server, :smoke])}
 
   it { should respond_to(:category) }
+  it { should respond_to(:redundancy) }
 
   describe 'validations' do
     it { should validate_presence_of(:number) }

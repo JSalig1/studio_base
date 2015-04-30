@@ -7,6 +7,8 @@
       <%= form.text_field :number, placeholder: 'Drive Number' %>
       <%= form.label 'Select Drive Type:' %>
       <%= form.select :category, Drive.categories.keys.to_a %>
+      <%= form.label 'Cloned' %>
+      <%= form.check_box :redundancy %>
       <%= form.submit 'Create Drive' %>
     <% end %>
   </div>
