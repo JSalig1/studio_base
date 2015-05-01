@@ -1,5 +1,10 @@
 <section class="half--wide">
   <h2><%= @drive.number %></h2>
+  <ul>
+    <li>Number: <%= @drive.number %></li>
+    <li>Category: <%= @drive.category %></li>
+    <li>Cloned: <%= @drive.redundancy %></li>
+  </ul>
 
   <div>
     <h3>Archives</h3>
@@ -20,4 +25,5 @@
       </tbody>
     </table>
   </div>
+  <button><%= link_to 'Edit', edit_drive_path(@drive) %></button>
 </section>

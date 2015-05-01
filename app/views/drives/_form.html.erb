@@ -1,0 +1,11 @@
+<div>
+  <%= form_for @drive do |form| %>
+    <%= render 'form_errors', target: @drive %>
+    <%= form.text_field :number, placeholder: 'Number' %>
+    <%= form.label 'Select Drive Type:' %>
+    <%= form.select :category, Drive.categories.keys.to_a %>
+    <%= form.label 'Cloned' %>
+    <%= form.check_box :redundancy %>
+    <%= form.submit %>
+  <% end %>
+</div>

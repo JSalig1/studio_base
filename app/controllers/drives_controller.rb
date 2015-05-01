@@ -26,6 +26,16 @@ class DrivesController < ApplicationController
     @drive = find_drive
   end
 
+  def update
+    drive = find_drive
+    if drive.update_attributes(drive_params)
+      redirect_to drive
+    else
+      @drive = drive
+      render :edit
+    end
+  end
+
   private
 
   def find_drive

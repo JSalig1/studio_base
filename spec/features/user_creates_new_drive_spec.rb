@@ -4,7 +4,7 @@ feature 'user creates new drive' do
   scenario 'with valid data' do
     visit drives_path
     click_on('New Drive')
-    fill_in 'Drive Number',  with: 'drive_number'
+    fill_in 'Number',  with: 'drive_number'
     select 'smoke', from: 'drive_category'
     check('drive_redundancy')
     click_on('Create Drive')
@@ -17,7 +17,7 @@ feature 'user creates new drive' do
   scenario 'with invalid data' do
     visit drives_path
     click_on('New Drive')
-    fill_in 'Drive Number', with: ''
+    fill_in 'Number', with: ''
     click_on('Create Drive')
 
     expect(page).to have_content("can't be blank")

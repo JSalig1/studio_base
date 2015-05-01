@@ -4,5 +4,5 @@ Rails.application.routes.draw do
     resources :archives, only: [:new, :create]
   end
 
-  resources :drives, except: [:edit, :update, :destroy]
+  resources :drives, except: [:destroy]
 end
