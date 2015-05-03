@@ -26,4 +26,7 @@
     </table>
   </div>
   <button><%= link_to 'Edit', edit_drive_path(@drive) %></button>
+  <div class="admin-controls">
+    <%= link_to 'Delete Drive', @drive, method: :delete, data: {confirm: 'Are you sure?'} %>
+  </div>
 </section>
