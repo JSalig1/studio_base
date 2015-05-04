@@ -7,7 +7,7 @@
   </ul>
 
   <div>
-    <h3>Archives</h3>
+    <h3>Archived Projects</h3>
     <table class="table-minimal">
       <thead>
         <tr>
@@ -27,6 +27,6 @@
   </div>
   <button><%= link_to 'Edit', edit_drive_path(@drive) %></button>
   <div class="admin-controls">
-    <%= link_to 'Delete Drive', @drive, method: :delete, data: {confirm: 'Are you sure?'} %>
+    <%= link_to 'Delete Drive', @drive, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
 </section>
