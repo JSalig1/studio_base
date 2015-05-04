@@ -5,5 +5,5 @@ class Project < ActiveRecord::Base
   validates :job_number, presence: true, uniqueness: true
   validates :name, presence: true
 
-  enum status: [:in_progress, :completed]
+  enum status: [:in_progress, :completed, :archived]
 end

@@ -4,7 +4,7 @@ RSpec.describe Project, type: :model do
   subject { create(:project) }
 
   it { should define_enum_for(:status)
-    .with [:in_progress, :completed] }
+    .with [:in_progress, :completed, :archived] }
 
   describe 'validations' do
     it { should validate_presence_of(:job_number) }
