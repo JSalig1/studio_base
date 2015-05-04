@@ -5,4 +5,8 @@ class Drive < ActiveRecord::Base
   validates :number, presence: true, uniqueness: true
 
   enum category: [:server, :smoke]
+
+  def name
+    "#{category.capitalize} #{number}"
+  end
 end
