@@ -1,11 +1,10 @@
 <div class="form">
   <h2>New Project Archive</h2>
-  <%= form_for [@project, @archive] do |form| %>
+  <%= form_for @archive, url: project_archives_path(@archive.project) do |form| %>
     <%= render 'form_errors', target: @archive %>
-    <%= form.hidden_field :project_id, value: params[:project_id] %>
     <div class='collection-select'>
-      <%= form.label "#{@project.name} ->" %>
-      <%= form.collection_select :drive_id, Drive.all, :id, :name, { prompt: 'Click to Select'} %>
+      <%= form.label "#{@archive.project.name} ->" %>
+      <%= form.collection_select :drive_id, Drive.all, :id, :name, { prompt: 'Click to Select' } %>
     </div>
     <%= form.submit "Add Archive" %>
   <% end %>

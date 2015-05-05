@@ -1,23 +1,29 @@
 class ArchivesController < ApplicationController
   def new
-    @project = Project.find(params[:project_id])
-    @archive = Archive.new
+    @archive = find_project.archives.new
   end
 
   def create
-    archive = Archive.new(archive_params)
+    archive = find_project.archives.new(archive_params)
     if archive.save
       redirect_to archive.project
     else
       @archive = archive
-      @project = Project.find(params[:project_id])
       render :new
     end
   end
 
-private
+  def show
+    @archive = Archive.find(params[:id])
+  end
+
+  private
 
   def archive_params
     params.require(:archive).permit(:project_id, :drive_id)
+  end
+
+  def find_project
+    Project.find(params[:project_id])
   end
 end

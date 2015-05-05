@@ -43,6 +43,7 @@ class DrivesController < ApplicationController
     flash[:notice] = 'Drive deleted'
     redirect_to drives_path
   end
+
   private
 
   def find_drive

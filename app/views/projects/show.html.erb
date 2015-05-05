@@ -17,7 +17,9 @@
         <% @drives.each do |drive| %>
           <tr>
             <td>
-              <button class='new-window'><%= link_to "᎒", drive, target: '_blank' %></button>
+              <button class='new-window'>
+                <%= link_to "᎒", drive, target: '_blank' %>
+              </button>
               <%= link_to "#{drive.number}", drive %>
             </td>
             <td><%= drive.category %></td>
@@ -25,9 +27,13 @@
         <% end %>
       </tbody>
     </table>
-    <button class='small-button'><%= link_to 'Add Archive', new_project_archive_path(@project) %></button>
+    <button class='small-button'>
+      <%= link_to 'Add Archive', new_project_archive_path(@project) %>
+    </button>
   </div>
-  <button><%= link_to 'Edit', edit_project_path(@project) %></button>
+  <button>
+    <%= link_to 'Edit', edit_project_path(@project) %>
+  </button>
   <div class="admin-controls">
     <%= link_to 'Delete Project', @project, method: :delete, data: {confirm: 'Are you sure?'} %>
   </div>
