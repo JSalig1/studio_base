@@ -21,6 +21,7 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'dotenv-rails'
 end
 
 group :test do
@@ -28,6 +29,7 @@ group :test do
   gem 'capybara', '~> 2.3.0'
   gem 'shoulda-matchers', require: false
   gem 'database_cleaner'
+  gem "codeclimate-test-reporter", require: nil
 end
 
 group :staging, :production do
