@@ -4,16 +4,16 @@
     <table class="table-minimal">
       <thead>
         <tr>
-          <th>Number</th>
-          <th>Type</th>
+          <th>Name</th>
+          <th>Size</th>
           <th>Cloned</th>
         </tr>
       </thead>
       <tbody>
         <% @drives.each do |drive| %>
           <tr>
-            <td><%= link_to "#{drive.number}", drive %></td>
-            <td><%= drive.category %></td>
+            <td><%= link_to "#{drive.name}", drive %></td>
+            <td><%= "2 TB" %></td>
             <td><%= drive.redundancy %></td>
             <td><button class='table-button'><%= link_to "View", drive %></button></td>
           </tr>

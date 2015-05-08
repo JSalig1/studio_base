@@ -1,8 +1,10 @@
 <section class="half--wide">
   <h2><%= "Archive" %></h2>  
   <ul>
-    <li>Project: <%= @archive.project.name %></li>
-    <li>Drive: <%= @archive.drive.name %></li>
+    <li>Project: <%= link_to "#{@archive.project.name}", @archive.project %></li>
+    <li>Drive: <%= link_to "#{@archive.drive.name}", @archive.drive %></li>
     <li>Archived on: <%= @archive.created_at.strftime('%m/%d/%Y') %></li>
+    <li>Size: <%= @archive.size %></li>
   </ul>
+  <p><%= @archive.notes %><p>
 </section>

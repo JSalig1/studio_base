@@ -10,7 +10,7 @@
       <thead>
         <tr>
           <th>Number</th>
-          <th>Type</th>
+          <th>Size</th>
         </tr>
       </thead>
       <tbody>
@@ -20,9 +20,9 @@
               <button class='new-window'>
                 <%= link_to "᎒", drive, target: '_blank' %>
               </button>
-              <%= link_to "#{drive.number}", drive %>
+              <%= link_to "#{drive.name}", drive %>
             </td>
-            <td><%= drive.category %></td>
+            <td><%= "2 TB" %></td>
           </tr>
         <% end %>
       </tbody>

@@ -10,7 +10,7 @@ feature 'user creates new drive' do
     click_on('Create Drive')
 
     expect(page).to have_content('drive_number')
-    expect(page).to have_content('smoke')
+    expect(page).to have_content('Smoke')
     expect(page).to have_content('true')
   end
 

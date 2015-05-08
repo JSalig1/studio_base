@@ -7,6 +7,6 @@ class Drive < ActiveRecord::Base
   enum category: [:server, :smoke]
 
   def name
-    "#{category.capitalize} #{number}"
+    "#{category.capitalize} Archive #{number}"
   end
 end
