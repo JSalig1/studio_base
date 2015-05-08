@@ -1,1 +1,8 @@
-<%= "Archive for #{@archive.project.name} on #{@archive.drive.name}" %>
+<section class="half--wide">
+  <h2><%= "Archive" %></h2>  
+  <ul>
+    <li>Project: <%= @archive.project.name %></li>
+    <li>Drive: <%= @archive.drive.name %></li>
+    <li>Archived on: <%= @archive.created_at.strftime('%m/%d/%Y') %></li>
+  </ul>
+</section>

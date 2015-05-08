@@ -8,6 +8,6 @@ feature 'user visits and archive page' do
     visit drive_path(drive)
     click_on 'project_name'
 
-    expect(page).to have_content('Archive for project_name')
+    expect(page).to have_content('Archived on:')
   end
 end
