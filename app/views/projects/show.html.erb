@@ -20,7 +20,7 @@
               <button class='new-window'>
                 <%= link_to "᎒", drive, target: '_blank' %>
               </button>
-              <%= link_to "#{drive.name}", drive %>
+              <%= link_to "#{drive.name}", Archive.find_by(drive_id: drive, project_id: @project) %>
             </td>
             <td><%= "2 TB" %></td>
           </tr>

@@ -18,8 +18,9 @@ h3 {
   color: $medium-gray;
   font-weight: 200;
 }
-
-p,
+p {
+  padding-left: 1em;
+}
 .form-errors,
 .flash-notice {
   margin: 0 0 $small-spacing;

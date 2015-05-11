@@ -6,6 +6,10 @@
       <%= form.label "#{@archive.project.name} ->" %>
       <%= form.collection_select :drive_id, Drive.all, :id, :name, { prompt: 'Click to Select' } %>
     </div>
+    <%= form.label 'Size on disk:' %>
+    <%= form.number_field :size, step: 'any' %>
+    <%= form.label 'Additional notes:' %>
+    <%= form.text_area :notes %>
     <%= form.submit "Add Archive" %>
   <% end %>
 </div>

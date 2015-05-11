@@ -8,12 +8,15 @@ feature 'user creates project archive' do
     visit project_path(project)
     click_link('Add Archive')
     select 'drive_number', from: 'archive_drive_id'
+    fill_in 'archive_size', with: '3.46'
+    fill_in 'archive_notes', with: 'yada yada'
     click_on('Add Archive')
-    visit project_path(project)
 
     expect(page).to have_content('drive_number')
     click_on('drive_number')
     expect(page).to have_content('project_name')
+    expect(page).to have_content('3.46')
+    expect(page).to have_content('yada yada')
   end
 
 end

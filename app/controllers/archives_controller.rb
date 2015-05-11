@@ -20,7 +20,7 @@ class ArchivesController < ApplicationController
   private
 
   def archive_params
-    params.require(:archive).permit(:project_id, :drive_id)
+    params.require(:archive).permit(:project_id, :drive_id, :size, :notes)
   end
 
   def find_project
