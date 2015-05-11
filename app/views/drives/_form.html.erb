@@ -2,10 +2,17 @@
   <%= form_for @drive do |form| %>
     <%= render 'form_errors', target: @drive %>
     <%= form.text_field :number, placeholder: 'Number' %>
-    <%= form.label 'Select Drive Type:' %>
-    <%= form.select :category, Drive.categories.keys %>
-    <%= form.label 'Cloned' %>
-    <%= form.check_box :redundancy %>
+    <div>
+      <%= form.label 'Select Drive Type:' %>
+      <%= form.select :category, Drive.categories.keys %>
+    </div>
+    <div>
+      <%= form.label 'Cloned:' %>
+      <label class="label-switch">
+        <%= form.check_box :redundancy %>
+        <div class="checkbox"></div>
+      </label>
+    </div>
     <%= form.submit %>
   <% end %>
 </div>

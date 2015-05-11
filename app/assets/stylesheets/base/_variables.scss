@@ -47,3 +47,15 @@ $base-border: 1px solid $base-border-color;
 // Forms
 $form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// Switch
+$switch-width: 39px;
+$switch-padding: 2px;
+$switch-height: 24px;
+$switch-radius: $switch-height;
+$knob-size: $switch-height - ($switch-padding * 2);
+$knob-radius: $switch-height - ($switch-padding * 2);
+$knob-width: $knob-size;
+$switch-background: $base-background-color;
+$switch-border-background: darken($base-background-color, 15%);
+$switch-shadow: 0 2px 5px transparentize(black, 0.5);
