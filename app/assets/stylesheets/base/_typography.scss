@@ -38,6 +38,10 @@ a {
   &:focus {
     outline: none;
   }
+
+  &:hover {
+    color: $medium-dark-gray;
+  }
 }
 
 hr {
