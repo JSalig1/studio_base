@@ -18,5 +18,4 @@ feature 'user creates project archive' do
     expect(page).to have_content('3.46')
     expect(page).to have_content('yada yada')
   end
-
 end

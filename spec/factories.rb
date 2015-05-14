@@ -11,5 +11,8 @@ FactoryGirl.define do
   factory :archive do
     project_id 1
     drive_id 1
+
+    project
+    drive
   end
 end

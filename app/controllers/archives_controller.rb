@@ -14,13 +14,31 @@ class ArchivesController < ApplicationController
   end
 
   def show
-    @archive = Archive.find(params[:id])
+    @archive = find_archive
+  end
+
+  def edit
+    @archive = find_archive
+  end
+
+  def update
+    archive = find_archive
+    if archive.update_attributes(archive_params)
+      redirect_to archive
+    else
+      @archive = archive
+      render :edit
+    end
   end
 
   private
 
   def archive_params
     params.require(:archive).permit(:project_id, :drive_id, :size, :notes)
+  end
+
+  def find_archive
+    Archive.find(params[:id])
   end
 
   def find_project
