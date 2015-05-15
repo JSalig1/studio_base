@@ -9,4 +9,10 @@
   Notes:
   <p><%= @archive.notes %></p>
   <button><%= link_to 'Edit', edit_archive_path(@archive) %></button>
+  <div class="admin-controls">
+    <%= link_to 'Delete Archive', @archive,
+      method: :delete,
+      data: { confirm: 'Are you sure?' }
+    %>
+  </div>
 </section>

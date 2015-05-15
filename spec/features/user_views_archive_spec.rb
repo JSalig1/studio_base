@@ -22,4 +22,13 @@ feature 'user edits archive details' do
 
     expect(page).to have_content("Size can't be blank")
   end
+
+  scenario 'they can destroy the archive record' do
+    archive = create(:archive)
+    visit archive_path(archive)
+
+    click_on('Delete Archive')
+
+    expect(page).to have_content('Archive deleted')
+  end
 end

@@ -31,6 +31,14 @@ class ArchivesController < ApplicationController
     end
   end
 
+  def destroy
+    archive = find_archive
+    archive.destroy
+
+    flash[:notice] = 'Archive deleted'
+    redirect_to archive.project
+  end
+
   private
 
   def archive_params
