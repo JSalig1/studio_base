@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511222006) do
+ActiveRecord::Schema.define(version: 20150519190616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,11 +29,17 @@ ActiveRecord::Schema.define(version: 20150511222006) do
   add_index "archives", ["project_id"], name: "index_archives_on_project_id", using: :btree
 
   create_table "drives", force: :cascade do |t|
-    t.string   "number",                     null: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.integer  "category",   default: 0
-    t.boolean  "redundancy", default: false
+    t.string   "number",                           null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.integer  "category",         default: 0
+    t.boolean  "redundancy",       default: false
+    t.string   "brand"
+    t.string   "serial"
+    t.integer  "file_system",      default: 0
+    t.float    "capacity",         default: 2.0,   null: false
+    t.string   "location"
+    t.integer  "check_out_status", default: 0
   end
 
   create_table "projects", force: :cascade do |t|

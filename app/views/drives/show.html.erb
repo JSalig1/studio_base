@@ -1,8 +1,13 @@
 <section class="half--wide">
   <h2><%= @drive.name %></h2>
   <ul>
+    <li>Brand: <%= @drive.brand %></li>
+    <li>Serial: <%= @drive.serial %></li>
+    <li>File System: <%= @drive.file_system %></li>
+    <li>Capacity: <%= @drive.capacity %></li>
+    <li>Location: <%= @drive.location %></li>
     <li>Cloned: <%= @drive.redundancy %></li>
-    <li>Size: <%= "2 TB" %></li>
+    <li>Check-out Status: <%= @drive.check_out_status %></li>
   </ul>
 
   <div>

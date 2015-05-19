@@ -1,10 +1,27 @@
 <div>
   <%= form_for @drive do |form| %>
     <%= render 'form_errors', target: @drive %>
+    <%= form.label 'Drive Number' %>
     <%= form.text_field :number, placeholder: 'Number' %>
+    <%= form.label 'Brand' %>
+    <%= form.text_field :brand, placeholder: 'Brand' %>
+    <%= form.label 'Serial' %>
+    <%= form.text_field :serial, placeholder: 'Serial' %>
     <div>
       <%= form.label 'Select Drive Type:' %>
       <%= form.select :category, Drive.categories.keys %>
+    </div>
+    <div>
+      <%= form.label 'Select File System:' %>
+      <%= form.select :file_system, Drive.file_systems.keys %>
+    </div>
+    <%= form.label 'Capacity' %>
+    <%= form.number_field :capacity, placeholder: '2.0' %>
+    <%= form.label 'Location' %>
+    <%= form.text_field :location, placeholder: 'Location' %>
+    <div>
+      <%= form.label 'Drive Check-out Status:' %>
+      <%= form.select :check_out_status, Drive.check_out_statuses.keys %>
     </div>
     <div>
       <%= form.label 'Cloned:' %>
