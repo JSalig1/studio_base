@@ -29,8 +29,7 @@ button {
 
   &:hover,
   &:focus {
-    background-color: darken($light-gray, 30%);
-    color: #fff;
+    background-color: darken($action-color, 10%);
   }
 
   &:disabled {
@@ -40,6 +39,11 @@ button {
 
   a {
     color: #fff;
+
+    &:hover,
+    &:focus {
+      color: $off-white;
+    }
   }
 }
 
