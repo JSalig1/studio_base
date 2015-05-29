@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   resources :archives, except: [:new, :create, :index]
   resources :drives
+
+  resource :search, only: [:show]
 end
