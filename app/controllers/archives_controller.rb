@@ -4,9 +4,11 @@ class ArchivesController < ApplicationController
   end
 
   def create
-    archive = find_project.archives.new(archive_params)
+    project = find_project
+    archive = project.archives.new(archive_params)
     if archive.save
-      redirect_to archive.project
+      project.archived!
+      redirect_to project
     else
       @archive = archive
       render :new

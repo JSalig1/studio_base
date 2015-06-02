@@ -12,6 +12,7 @@ feature 'user creates project archive' do
     fill_in 'archive_notes', with: 'yada yada'
     click_on('Add Archive')
 
+    expect(page).to have_content('Status: archived')
     expect(page).to have_content('drive_number')
     click_on('drive_number')
     expect(page).to have_content('project_name')
