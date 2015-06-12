@@ -1,7 +1,11 @@
 FactoryGirl.define do
+  sequence :job_number do |n|
+    "project_number#{n}"
+  end
+
   factory :project do
     name 'project_name'
-    job_number 'project_number'
+    job_number
   end
 
   factory :drive do

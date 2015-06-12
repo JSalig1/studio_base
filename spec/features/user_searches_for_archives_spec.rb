@@ -11,7 +11,7 @@ feature 'user searches for archives' do
 
   scenario 'successfully' do
     project = create(:project)
-    other_project = create :project, name: 'something else', job_number: 'other'
+    other_project = create :project, name: 'something else'
 
     visit root_path
     fill_in 'Search Projects', with: 'project_name'
