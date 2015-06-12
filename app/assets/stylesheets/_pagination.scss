@@ -1,7 +1,48 @@
-.previous_page {
-  color: red;
-}
+.user-controls {
+  @include outer-container;
+  .pagination {
+    cursor: default;
+    float: right;
+    /* self-clearing method: */ }
+    .pagination a, .pagination span, .pagination em {
+      padding: 0.2em 0.5em;
+      display: block;
+      float: left;
+      margin-right: 1px;
+      background: white;
+    }
+    .pagination .disabled {
+      color: $medium-gray;
+      border: 1px solid $light-gray;
+    }
+    .pagination .current {
+      font-style: normal;
+      font-weight: bold;
+      background: $action-color;
+      color: white;
+      border: 1px solid darken($action-color, 10%);
+    }
+    .pagination a {
+      text-decoration: none;
+      color: $action-color;
+      border: 1px solid lighten($action-color, 20%);;
+    }
+      .pagination a:hover, .pagination a:focus {
+        color: darken($action-color, 10%);
+        border-color: darken($action-color, 10%);
+      }
+    .pagination:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+    }
+    * html .pagination {
+      height: 1%;
+    }
+    *:first-child + html .pagination {
+      overflow: hidden;
+    }
 
-.next_page {
-  color: red;
 }
