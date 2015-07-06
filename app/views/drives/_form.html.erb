@@ -15,8 +15,8 @@
       <%= form.label 'Select File System:' %>
       <%= form.select :file_system, Drive.file_systems.keys %>
     </div>
-    <%= form.label 'Capacity' %>
-    <%= form.number_field :capacity, placeholder: '2.0' %>
+    <%= form.label "Capacity in Terabytes (TB)" %>
+    <%= form.number_field :capacity, placeholder: '2.0 TB' %>
     <%= form.label 'Location' %>
     <%= form.text_field :location, placeholder: 'Location' %>
     <div>
