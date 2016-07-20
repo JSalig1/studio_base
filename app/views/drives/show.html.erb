@@ -2,33 +2,11 @@
   <h2><%= @drive.name %></h2>
   <ul>
     <li>Brand: <%= @drive.brand %></li>
-    <li>Serial: <%= @drive.serial %></li>
-    <li>File System: <%= @drive.file_system %></li>
     <li>Capacity: <%= @drive.capacity %></li>
     <li>Location: <%= @drive.location %></li>
-    <li>Cloned: <%= @drive.redundancy %></li>
-    <li>Check-out Status: <%= @drive.check_out_status %></li>
+    <li>Notes: <%= @drive.notes %></li>
   </ul>
 
-  <div>
-    <h3>Archives</h3>
-    <table class="table-minimal">
-      <thead>
-        <tr>
-          <th>Project</th>
-          <th>Number</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @projects.each do |project| %>
-          <tr>
-            <td><%= link_to "#{project.name}", Archive.find_by(drive_id: @drive, project_id: project) %></td>
-            <td><%= project.job_number %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
   <button><%= link_to 'Edit', edit_drive_path(@drive) %></button>
   <div class="admin-controls">
     <%= link_to 'Delete Drive', @drive, method: :delete, data: { confirm: 'Are you sure?' } %>

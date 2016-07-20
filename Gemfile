@@ -17,10 +17,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'will_paginate', '~> 3.0.6'
 
 
+group :development do
+  gem 'web-console', '~> 2.0'
+end
 group :development, :test do
   gem 'rspec-rails', '~> 3.2'
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'dotenv-rails'
 end

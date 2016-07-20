@@ -10,15 +10,15 @@ feature 'user searches for archives' do
   end
 
   scenario 'successfully' do
-    project = create(:project)
-    other_project = create :project, name: 'something else'
+    drive = create(:drive)
+    other_drive = create :drive, name: 'something else'
 
     visit root_path
-    fill_in 'Search Projects', with: 'project_name'
+    fill_in 'Search Projects', with: 'name'
     click_on 'search'
 
     expect(page).to have_content('Search Results')
-    expect(page).to have_content('project_name')
+    expect(page).to have_content('name')
     expect(page).not_to have_content('something else')
   end
 end

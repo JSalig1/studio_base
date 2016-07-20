@@ -1,35 +1,18 @@
 <div>
   <%= form_for @drive do |form| %>
     <%= render 'form_errors', target: @drive %>
-    <%= form.label 'Drive Number' %>
-    <%= form.text_field :number, placeholder: 'Number' %>
-    <%= form.label 'Brand' %>
+    <%= form.label 'Name:' %>
+    <%= form.text_field :name, placeholder: 'Required' %>
+    <%= form.label 'For Project:' %>
+    <%= form.text_field :project, placeholder: 'Number and Name' %>
+    <%= form.label 'Brand:' %>
     <%= form.text_field :brand, placeholder: 'Brand' %>
-    <%= form.label 'Serial' %>
-    <%= form.text_field :serial, placeholder: 'Serial' %>
-    <div>
-      <%= form.label 'Select Drive Type:' %>
-      <%= form.select :category, Drive.categories.keys %>
-    </div>
-    <div>
-      <%= form.label 'Select File System:' %>
-      <%= form.select :file_system, Drive.file_systems.keys %>
-    </div>
     <%= form.label "Capacity in Terabytes (TB)" %>
     <%= form.number_field :capacity, placeholder: '2.0 TB' %>
-    <%= form.label 'Location' %>
+    <%= form.label 'Location:' %>
     <%= form.text_field :location, placeholder: 'Location' %>
-    <div>
-      <%= form.label 'Drive Check-out Status:' %>
-      <%= form.select :check_out_status, Drive.check_out_statuses.keys %>
-    </div>
-    <div>
-      <%= form.label 'Cloned:' %>
-      <label class="label-switch">
-        <%= form.check_box :redundancy %>
-        <div class="checkbox"></div>
-      </label>
-    </div>
+    <%= form.label 'Notes:' %>
+    <%= form.text_area :notes, placeholder: 'Notes' %>
     <%= form.submit %>
   <% end %>
 </div>

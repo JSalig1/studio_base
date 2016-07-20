@@ -6,12 +6,10 @@ feature 'user visits a drive page' do
     visit drive_path(drive)
 
     click_link('Edit')
-    fill_in 'Number', with: 'new drive number'
-    uncheck 'drive_redundancy'
+    fill_in 'drive_name', with: 'New Drive Name'
     click_on('Update Drive')
 
-    expect(page).to have_content('new drive number')
-    expect(page).to have_content('false')
+    expect(page).to have_content('New Drive Name')
   end
 
   scenario 'they can delete a drive record' do

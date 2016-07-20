@@ -1,6 +1,6 @@
 class DrivesController < ApplicationController
   def index
-    @drives = Drive.all
+    @drives = Drive.paginate(page: params[:page], per_page: 20)
   end
 
   def new
@@ -19,7 +19,6 @@ class DrivesController < ApplicationController
 
   def show
     @drive = find_drive
-    @projects = @drive.projects
   end
 
   def edit
@@ -52,15 +51,12 @@ class DrivesController < ApplicationController
 
   def drive_params
     params.require(:drive).permit(
+      :name,
+      :project,
       :brand,
-      :serial,
-      :file_system,
       :capacity,
       :location,
-      :check_out_status,
-      :number,
-      :category,
-      :redundancy
+      :notes
     )
   end
 end

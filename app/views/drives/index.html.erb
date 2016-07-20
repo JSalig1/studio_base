@@ -1,20 +1,20 @@
 <section class="view">
   <div>
-    <h2>Archive Drives</h2>
+    <h2>Drives</h2>
     <table class="table-minimal">
       <thead>
         <tr>
           <th>Name</th>
+          <th>Project</th>
           <th>Size</th>
-          <th>Cloned</th>
         </tr>
       </thead>
       <tbody>
         <% @drives.each do |drive| %>
           <tr>
             <td><%= link_to "#{drive.name}", drive %></td>
-            <td><%= "2 TB" %></td>
-            <td><%= drive.redundancy %></td>
+            <td><%= drive.project %></td>
+            <td><%= "#{drive.capacity} TB" %></td>
             <td><button class='table-button'><%= link_to "View", drive %></button></td>
           </tr>
         <% end %>
@@ -22,3 +22,7 @@
     </table>
   </div>
 </section>
+
+<div class="user-controls">
+  <%= will_paginate @drives %>
+</div>

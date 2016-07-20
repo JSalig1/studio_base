@@ -3,15 +3,15 @@ class Search
 
   def initialize(search)
     @status = 'No Records Found'
-    @results = search_projects_for(search[:query])
+    @results = search_drivess_for(search[:query])
     update_status
   end
 
   private
 
-  def search_projects_for(search_query)
-    Project.where(
-      "name ILIKE :query OR job_number ILIKE :query",
+  def search_drivess_for(search_query)
+    Drive.where(
+      "name ILIKE :query OR project ILIKE :query",
       query: "%#{search_query}%"
     )
   end

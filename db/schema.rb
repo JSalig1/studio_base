@@ -11,45 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150519190616) do
+ActiveRecord::Schema.define(version: 20160719210530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "archives", force: :cascade do |t|
-    t.integer  "project_id"
-    t.integer  "drive_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.float    "size",       default: 0.0, null: false
-    t.text     "notes"
-  end
-
-  add_index "archives", ["drive_id"], name: "index_archives_on_drive_id", using: :btree
-  add_index "archives", ["project_id"], name: "index_archives_on_project_id", using: :btree
-
   create_table "drives", force: :cascade do |t|
-    t.string   "number",                           null: false
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-    t.integer  "category",         default: 0
-    t.boolean  "redundancy",       default: false
-    t.string   "brand"
-    t.string   "serial"
-    t.integer  "file_system",      default: 0
-    t.float    "capacity",         default: 2.0,   null: false
-    t.string   "location"
-    t.integer  "check_out_status", default: 0
-  end
-
-  create_table "projects", force: :cascade do |t|
-    t.string   "job_number",               null: false
+    t.string   "name",                     null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.string   "name",                     null: false
-    t.datetime "booking_date"
-    t.datetime "start_date"
-    t.integer  "status",       default: 0
+    t.string   "brand"
+    t.float    "capacity",   default: 2.0, null: false
+    t.string   "location"
+    t.string   "project",                  null: false
+    t.text     "notes"
   end
 
 end
