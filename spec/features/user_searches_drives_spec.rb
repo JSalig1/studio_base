@@ -4,7 +4,7 @@ feature 'user searches drives' do
 
   scenario 'unsuccessfully' do 
     visit root_path
-    fill_in 'Search Projects', with: 'an unfindable project'
+    fill_in 'Search', with: 'an unfindable project'
     click_on 'search'
 
     expect(page).to have_content("No Records Found")
@@ -15,7 +15,7 @@ feature 'user searches drives' do
     other_drive = create :drive, name: 'Something Else'
 
     visit root_path
-    fill_in 'Search Projects', with: 'Searched for Drive'
+    fill_in 'Search', with: 'Searched for Drive'
     click_on 'search'
 
     expect(page).to have_content('Search Results')
