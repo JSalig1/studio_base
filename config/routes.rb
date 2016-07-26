@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root to: "drives#index"
-  resources :drives
+  get "/studiobase" => "drives#index"
 
-  resource :search, only: [:show]
+  scope "/studiobase" do
+    resources :drives
+    resource :search, only: [:show]
+  end
+
 end
