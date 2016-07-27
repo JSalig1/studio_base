@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.2.0'
 
 gem 'rails', '4.2.0'
+gem 'dotenv-rails'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'bourbon'
@@ -24,7 +25,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.2'
   gem 'byebug'
   gem 'spring'
-  gem 'dotenv-rails'
 end
 
 group :test do
