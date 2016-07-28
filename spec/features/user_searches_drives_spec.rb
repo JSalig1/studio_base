@@ -23,4 +23,15 @@ feature 'user searches drives' do
     expect(page).not_to have_content('Something Else')
   end
 
+  scenario 'matching notes field only' do
+    create :drive, name: 'Detailed Drive', notes: 'Special Notes'
+
+    visit root_path
+    fill_in 'Search', with: 'Special Notes'
+    click_on 'search'
+
+    expect(page).to have_content('Search Results')
+    expect(page).to have_content('Detailed Drive')
+  end
+
 end

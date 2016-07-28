@@ -11,7 +11,7 @@ class Search
 
   def search_drivess_for(search_query)
     Drive.where(
-      "name ILIKE :query OR project ILIKE :query",
+      "name ILIKE :query OR project ILIKE :query OR notes ILIKE :query",
       query: "%#{search_query}%"
     )
   end
