@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: studio_base_production
-  username: studio_base
+  username: root
   password: <%= ENV['STUDIO_BASE_DATABASE_PASSWORD'] %>
