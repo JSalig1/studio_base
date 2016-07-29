@@ -8,7 +8,12 @@
     <li>Notes: <%= @drive.notes %></li>
   </ul>
 
-  <button><%= link_to 'Edit', edit_drive_path(@drive) %></button>
+  <img src="data: image/png; base64, <%= @drive.barcode %>" alt="Red dot" />
+
+  <button>
+    <%= link_to 'Edit', edit_drive_path(@drive) %>
+  </button>
+
   <div class="admin-controls">
     <%= link_to 'Delete Drive', @drive, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
