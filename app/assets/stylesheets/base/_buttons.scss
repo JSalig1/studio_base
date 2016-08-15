@@ -1,7 +1,6 @@
 #{$all-button-inputs},
 button {
   @include appearance(none);
-  
 
   -webkit-font-smoothing: antialiased;
   background-color: $action-color;
@@ -20,12 +19,7 @@ button {
   vertical-align: middle;
   text-align: center;
   white-space: nowrap;
-  margin-top: .3em;
-  margin-bottom: .3em;
   display: block;
-  margin-top: 2em;
-  margin-left: auto;
-  margin-right: auto;
 
   &:hover,
   &:focus {
@@ -50,11 +44,7 @@ button {
 .new-window {
   display: inline-block;
   float: left;
-  margin-top: 0;
-  margin-right: .2em;
-  margin-right: .2em;
   transform: scale(1, .9) translate(-.0em);
-  padding: 4px;
   background-color: darken($light-gray, 15%);
   a {
     font-weight: 200;
