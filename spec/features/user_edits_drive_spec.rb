@@ -2,6 +2,10 @@ require 'rails_helper'
 
 feature 'user edits a drive' do
 
+  before do
+    sign_in_adauth
+  end
+
   scenario 'sucessfully' do
     drive = create(:drive)
     visit drive_path(drive)

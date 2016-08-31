@@ -36,6 +36,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    adauth (2.0.5)
+      expects (~> 0.0.2)
+      net-ldap
     arel (6.0.3)
     barby (0.6.4)
     binding_of_caller (0.7.2)
@@ -72,6 +75,7 @@ GEM
       railties (>= 4.0, < 5.1)
     erubis (2.7.0)
     execjs (2.7.0)
+    expects (0.0.3)
     factory_girl (4.7.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.7.0)
@@ -102,6 +106,7 @@ GEM
     neat (1.7.4)
       bourbon (>= 4.0)
       sass (>= 3.3)
+    net-ldap (0.15.0)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
@@ -214,6 +219,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  adauth
   barby
   bourbon
   byebug

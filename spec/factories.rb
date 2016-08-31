@@ -6,4 +6,9 @@ FactoryGirl.define do
     notes "special notes"
   end
 
+  factory :user do
+    login "login"
+    name "name"
+  end
+
 end

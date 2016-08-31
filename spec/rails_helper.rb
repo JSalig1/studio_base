@@ -23,15 +23,24 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = false
 
   config.before(:suite) do
-      DatabaseCleaner.strategy = :transaction
-      DatabaseCleaner.clean_with(:truncation)
-    end
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
 
-    config.around(:each) do |example|
-      DatabaseCleaner.cleaning do
-        example.run
-      end
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
     end
+  end
 
   config.infer_spec_type_from_file_location!
+end
+
+def sign_in_adauth
+  user = create(:user)
+  visit signin_path
+
+  fill_in "username", with: ENV["AD_LOGIN"]
+  fill_in "password", with: ENV["AD_PASS"]
+  click_on("Login")
 end

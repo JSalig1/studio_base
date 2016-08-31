@@ -19,6 +19,7 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'unicorn-rails'
 gem 'barby'
 gem 'chunky_png'
+gem 'adauth'
 
 group :development do
   gem 'web-console', '~> 2.0'

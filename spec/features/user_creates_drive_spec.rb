@@ -2,6 +2,10 @@ require 'rails_helper'
 
 feature 'user creates a drive' do
 
+  before do
+    sign_in_adauth
+  end
+
   scenario 'successfully' do
     visit drives_path
 

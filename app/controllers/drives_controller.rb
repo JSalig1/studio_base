@@ -1,4 +1,7 @@
 class DrivesController < ApplicationController
+
+  before_action :authorize, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @drives = Drive.paginate(page: params[:page], per_page: 20)
   end

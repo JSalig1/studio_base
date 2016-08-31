@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>StudioBase</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body class="main-body">
+  <head>
+    <title>StudioBase</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body class="main-body">
+    <div id="flash">
+      <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
+    </div>
 
-  <%= render 'header' %>
+    <%= render 'header' %>
 
-  <%= render 'flashes' %>
+    <%= render 'flashes' %>
 
-  <%= yield %>
+    <%= yield %>
 
-</body>
+  </body>
 </html>
