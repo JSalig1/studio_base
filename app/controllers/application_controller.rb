@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def authorize
     unless current_user
-      redirect_to signin_path
+      render template: "sessions/new"
     end
   end
 end
