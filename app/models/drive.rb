@@ -10,6 +10,10 @@ class Drive < ActiveRecord::Base
     generate_barcode
   end
 
+  def location
+    read_attribute(:location).titleize
+  end
+
   private
 
   def generate_barcode
