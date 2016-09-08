@@ -11,7 +11,9 @@ class Drive < ActiveRecord::Base
   end
 
   def location
-    read_attribute(:location).titleize
+    unless read_attribute(:location) == nil
+      read_attribute(:location).titleize
+    end
   end
 
   private
