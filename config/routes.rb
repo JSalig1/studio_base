@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get "/" => "drives#index"
-
   scope "/studiobase" do
     root to: "drives#index"
     resources :drives
