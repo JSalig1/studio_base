@@ -10,7 +10,7 @@ feature 'user edits a drive' do
     drive = create(:drive)
     visit drive_path(drive)
 
-    click_link('Edit')
+    click_button('Edit')
     fill_in 'drive_name', with: 'New Drive Name'
     click_on('Update Drive')
 
@@ -21,7 +21,7 @@ feature 'user edits a drive' do
     drive = create(:drive)
     visit drive_path(drive)
 
-    click_link('Edit')
+    click_button('Edit')
     fill_in 'drive_name', with: ''
     click_on('Update Drive')
 
