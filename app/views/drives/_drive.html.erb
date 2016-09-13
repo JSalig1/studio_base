@@ -2,5 +2,5 @@
   <td><div><%= link_to "#{drive.name}", drive %></td></div>
   <td><%= drive.project %></td>
   <td><%= drive.location %></td>
-  <td><button class='table-button'><%= link_to "View", drive %></button></td>
+  <td><%= button_to "View", drive, method: "get" %></td>
 </tr>

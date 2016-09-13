@@ -10,9 +10,7 @@
 
   <img src="data: image/png; base64, <%= @drive.barcode %>" alt="Red dot" />
 
-  <button>
-    <%= link_to 'Edit', edit_drive_path(@drive) %>
-  </button>
+  <%= button_to 'Edit', edit_drive_path(@drive), method: 'get' %>
 
   <div class="admin-controls">
     <%= link_to 'Delete Drive', @drive, method: :delete, data: { confirm: 'Are you sure?' } %>
