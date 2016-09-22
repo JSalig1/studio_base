@@ -10,12 +10,6 @@ class Drive < ActiveRecord::Base
     generate_barcode
   end
 
-  def location
-    unless read_attribute(:location) == nil
-      read_attribute(:location).titleize
-    end
-  end
-
   private
 
   def generate_barcode
