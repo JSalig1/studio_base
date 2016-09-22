@@ -10,6 +10,10 @@
 
   <img src="data: image/png; base64, <%= @drive.barcode %>" alt="Red dot" />
 
+  <div>
+    <%= link_to 'Print Label', print_path(@drive), target: '_blank' %>
+  </div>
+
   <%= button_to 'Edit', edit_drive_path(@drive), method: 'get' %>
 
   <div class="admin-controls">
