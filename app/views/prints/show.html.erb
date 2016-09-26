@@ -1,9 +1,20 @@
-<section class="view">
-  <div style="display: flex; border: 1px solid; width: 318px;">
-    <img src="data: image/png; base64, <%= @drive.barcode %>" alt="Red dot" style="height: 86px;" />
-    <div>
-      <p>1stavemachine</p>
-      <%= @drive.name %>
+<head>
+  <%= stylesheet_link_tag '_print_label', media: 'all' %>
+</head>
+
+<body>
+  <div class="outer-container">
+    <div class="inner-top-container" >
+      <img class="qr-code" src="data: image/png; base64, <%= @drive.barcode %>" />
+      <div class="inner-top-left-container">
+        <div>
+          <p><%= @drive.name %> </p>
+          <p>Job: <%= @drive.project %></p>
+        </div>
+      </div>
+    </div>
+    <div class="address-line">
+      <%= @address %>
     </div>
   </div>
-</section>
+</body>

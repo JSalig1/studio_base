@@ -20,6 +20,7 @@ gem 'unicorn-rails'
 gem 'barby'
 gem 'chunky_png'
 gem 'adauth'
+gem 'rqrcode'
 
 group :development do
   gem 'web-console', '~> 2.0'

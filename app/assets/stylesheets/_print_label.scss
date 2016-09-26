@@ -1,0 +1,31 @@
+.outer-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  width: 318px;
+  height: 80px;
+}
+
+.inner-top-container {
+  display: flex;
+}
+
+.qr-code {
+  height: 68px;
+}
+
+.inner-top-left-container {
+  display: flex;
+  flex-direction: column;
+  line-height: 10px;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 240px;
+}
+
+.address-line {
+  font-size: 11px;
+  line-height: 0;
+  padding-left: 4px;
+}

@@ -1,11 +1,14 @@
 class Drive < ActiveRecord::Base
+  require 'barby/barcode/qr_code'
+  require 'barby/outputter/png_outputter'
+
+  delegate :url_helpers, to: 'Rails.application.routes'
+
   validates :name, presence: true
   validates :project, presence: true
   validates :capacity, presence: true
 
   def barcode
-    require 'barby/barcode/code_128'
-    require 'barby/outputter/png_outputter'
 
     generate_barcode
   end
@@ -13,11 +16,11 @@ class Drive < ActiveRecord::Base
   private
 
   def generate_barcode
-    Base64.encode64(Barby::Code128.new(unique).to_png.to_s)
+    Base64.encode64(Barby::QrCode.new(unique).to_png.to_s)
   end
 
   def unique
-    "#{self.class}#{id}"
+    ENV['HOST_DOMAIN'] + url_helpers.drive_path(self)
   end
 
 end

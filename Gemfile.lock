@@ -149,6 +149,8 @@ GEM
     rdoc (4.2.2)
       json (~> 1.4)
     refills (0.1.0)
+    rqrcode (0.10.1)
+      chunky_png (~> 1.0)
     rspec-core (3.4.4)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
@@ -237,6 +239,7 @@ DEPENDENCIES
   rails (= 4.2.0)
   rails_12factor
   refills
+  rqrcode
   rspec-rails (~> 3.2)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
