@@ -2,20 +2,21 @@ class Drive < ActiveRecord::Base
   require 'barby/barcode/qr_code'
   require 'barby/outputter/png_outputter'
 
+  has_many :checkouts
+
   delegate :url_helpers, to: 'Rails.application.routes'
 
   validates :name, presence: true
   validates :project, presence: true
   validates :capacity, presence: true
 
-  def barcode
-
-    generate_barcode
+  def qr_image
+    "data: image/png; base64," + generate_qr_code
   end
 
   private
 
-  def generate_barcode
+  def generate_qr_code
     Base64.encode64(Barby::QrCode.new(unique).to_png.to_s)
   end
 

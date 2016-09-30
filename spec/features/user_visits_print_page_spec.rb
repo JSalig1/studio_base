@@ -10,9 +10,9 @@ feature 'user visits drive print page' do
     drive = create(:drive)
     visit drive_path(drive)
 
-    click_on('Print Label')
+    click_on('print')
 
-    expect(page).to have_content('1stavemachine')
+    expect(page).to have_content('1stAveMachine')
   end
 
 end

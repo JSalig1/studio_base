@@ -1,0 +1,12 @@
+<div>
+  <%= form_for [@drive, @checkout] do |form| %>
+    <%= render 'form_errors', target: @checkout %>
+    <%= form.label 'Checked out by:' %>
+    <%= form.text_field :borrower, placeholder: 'Required' %>
+    <%= form.label 'Purpose:' %>
+    <%= form.text_area :purpose, placeholder: 'Purpose' %>
+    <%= form.label 'Checkout date:' %>
+    <%= form.date_field :date %>
+    <%= form.submit 'Checkout' %>
+  <% end %>
+</div>

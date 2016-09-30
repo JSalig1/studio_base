@@ -1,6 +1,11 @@
 <section class="half--wide">
-  <h2><%= @drive.name %></h2>
+
+  <%= link_to image_tag(@drive.qr_image), print_path(@drive), id: 'print', target: '_blank' %>
+  <h2>Drive</h2>
+
+
   <ul>
+    <li>Name: <strong><%= @drive.name %></strong></li><br>
     <li>Project: <%= @drive.project %></li>
     <li>Brand: <%= @drive.brand %></li>
     <li>Capacity: <%= "#{@drive.capacity} TB" %></li>
@@ -8,15 +13,31 @@
     <li>Notes: <%= @drive.notes %></li>
   </ul>
 
-  <img src="data: image/png; base64, <%= @drive.barcode %>" alt="Red dot" />
-
-  <div>
-    <%= link_to 'Print Label', print_path(@drive), target: '_blank' %>
-  </div>
-
   <%= button_to 'Edit', edit_drive_path(@drive), method: 'get' %>
 
   <div class="admin-controls">
     <%= link_to 'Delete Drive', @drive, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
+
+</section>
+
+<section class="half--wide">
+  <h3>Checkouts</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Who</th>
+        <th>Status</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <%= render @drive.checkouts %>
+
+    </tbody>
+  </table>
+
+  <%= button_to 'New', new_drive_checkout_path(@drive), method: 'get' %>
 </section>

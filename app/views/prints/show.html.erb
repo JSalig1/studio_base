@@ -5,7 +5,7 @@
 <body>
   <div class="outer-container">
     <div class="inner-top-container" >
-      <img class="qr-code" src="data: image/png; base64, <%= @drive.barcode %>" />
+      <img class="qr-code" src="<%= @drive.qr_image %>" />
       <div class="inner-top-left-container">
         <div>
           <p><%= @drive.name %> </p>
