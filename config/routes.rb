@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     resources :drives do
       resources :checkouts, only: [:index, :new, :create, :show]
     end
+
+    resources :checkouts, only: [:edit, :update]
+
     resource :search, only: [:show]
     resource :print, only: [:show]
 

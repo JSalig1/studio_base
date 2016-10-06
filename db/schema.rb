@@ -11,19 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160926195017) do
+ActiveRecord::Schema.define(version: 20161004163733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "checkouts", force: :cascade do |t|
     t.integer  "drive_id"
-    t.string   "borrower",   null: false
-    t.string   "status",     null: false
-    t.date     "date",       null: false
+    t.string   "borrower",    null: false
+    t.string   "status",      null: false
+    t.date     "date",        null: false
     t.text     "purpose"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "returner"
+    t.date     "return_date"
   end
 
   add_index "checkouts", ["drive_id"], name: "index_checkouts_on_drive_id", using: :btree

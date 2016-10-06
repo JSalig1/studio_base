@@ -1,0 +1,11 @@
+<div>
+  <%= form_for [@drive, @checkout] do |form| %>
+    <%= render 'form_errors', target: @checkout %>
+    <%= form.label 'Returned by:' %>
+    <%= form.text_field :returner, value: @checkout.borrower %>
+    <%= form.label 'Return date:' %>
+    <%= form.date_field :return_date, value: Date.today %>
+    <%= form.hidden_field :status, value: 'Returned' %>
+    <%= form.submit 'Return' %>
+  <% end %>
+</div>

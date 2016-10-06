@@ -24,20 +24,24 @@
 <section class="half--wide">
   <h3>Checkouts</h3>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Who</th>
-        <th>Status</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-    <tbody>
+  <% if @drive.checkouts.any? %>
+    <table>
+      <thead>
+        <tr>
+          <th>Who</th>
+          <th>Status</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @checkouts %>
+      </tbody>
+    </table>
+  <% end %>
 
-      <%= render @drive.checkouts %>
-
-    </tbody>
-  </table>
-
-  <%= button_to 'New', new_drive_checkout_path(@drive), method: 'get' %>
+  <% if @drive.checked_out %>
+    <%= button_to 'Return', edit_checkout_path(@drive.checked_out), method: 'get' %>
+  <% else %>
+    <%= button_to 'New', new_drive_checkout_path(@drive), method: 'get' %>
+  <% end%>
 </section>

@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
   }
 
   AdauthSearchField = [:login, :login]
+
+  def name_first_last
+    name.split(' ').reject { |initials| initials.include? '.' }.join(' ')
+  end
 end

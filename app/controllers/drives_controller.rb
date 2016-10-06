@@ -22,6 +22,7 @@ class DrivesController < ApplicationController
 
   def show
     @drive = find_drive
+    @checkouts = @drive.checkouts.order('updated_at DESC')
   end
 
   def edit
