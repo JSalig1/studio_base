@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       resources :checkouts, only: [:new, :create]
     end
 
-    resources :checkouts, only: [:edit, :update, :show]
+    resources :checkouts, only: [:show, :edit, :update, :destroy]
     resources :checkins, only: [:edit, :update]
 
     resource :search, only: [:show]

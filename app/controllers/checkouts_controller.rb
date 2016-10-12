@@ -32,6 +32,14 @@ class CheckoutsController < ApplicationController
     redirect_to checkout
   end
 
+  def destroy
+    checkout = Checkout.find(params[:id])
+    drive = checkout.drive
+    checkout.destroy
+    flash[:notice] = 'Checkout deleted'
+    redirect_to drive
+  end
+
   private
 
   def checkout_params
