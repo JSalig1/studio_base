@@ -12,4 +12,8 @@ class Checkout < ActiveRecord::Base
       borrower
     end
   end
+
+  def returned?
+    status == 'Returned'
+  end
 end

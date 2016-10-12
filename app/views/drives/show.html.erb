@@ -40,7 +40,7 @@
   <% end %>
 
   <% if @drive.checked_out %>
-    <%= button_to 'Return', edit_checkout_path(@drive.checked_out), method: 'get' %>
+    <%= button_to 'Return', edit_checkin_path(@drive.checked_out), method: 'get'  %>
   <% else %>
     <%= button_to 'New', new_drive_checkout_path(@drive), method: 'get' %>
   <% end%>

@@ -18,6 +18,10 @@ class CheckoutsController < ApplicationController
     end
   end
 
+  def show
+    @checkout = Checkout.find(params[:id])
+  end
+
   def edit
     @checkout = Checkout.find(params[:id])
   end
@@ -25,8 +29,7 @@ class CheckoutsController < ApplicationController
   def update
     checkout = Checkout.find(params[:id])
     checkout.update_attributes(checkout_params)
-    flash[:notice] = "Drive checked in successfully"
-    redirect_to checkout.drive
+    redirect_to checkout
   end
 
   private

@@ -1,6 +1,6 @@
 <div class="form">
-  <h2>Return Drive:</h2>
-  <h2><%= @checkout.drive.name %></h2>
+  <h2>Checkout for:</h2>
+  <h3><%= link_to @checkout.drive.name, @checkout.drive %></h3>
 
   <%= render 'return' %>
 

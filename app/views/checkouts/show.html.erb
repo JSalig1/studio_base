@@ -1,0 +1,26 @@
+<section class="half--wide">
+
+  <h2>Checkout for:</h2>
+  <h3><%= link_to @checkout.drive.name, @checkout.drive %></h3>
+
+  <ul>
+    <li>Status: <strong><%= @checkout.status %></strong></li><br>
+    <li>Checked out by: <%= @checkout.borrower %></li>
+    <li>Date: <%= @checkout.date %></li>
+
+    <% if @checkout.purpose? %>
+      <li>Purpose: <%= @checkout.purpose %></li>
+    <% end %>
+    <% if @checkout.returned? %>
+      <li>Returned by: <%= @checkout.returner %></li>
+      <li>Date: <%= @checkout.return_date %></li>
+    <% end %>
+  </ul>
+
+  <%= button_to 'Edit', edit_checkout_path(@checkout), method: 'get', format: 'long' %>
+
+  <div class="admin-controls">
+    <%= link_to 'Delete Checkout', @checkout, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+
+</section>
