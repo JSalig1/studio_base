@@ -45,3 +45,7 @@
     <%= button_to 'New', new_drive_checkout_path(@drive), method: 'get' %>
   <% end%>
 </section>
+
+<div class="user-controls-half-wide">
+  <%= will_paginate @checkouts %>
+</div>

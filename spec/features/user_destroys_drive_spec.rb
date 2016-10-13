@@ -15,4 +15,12 @@ feature 'user destroys a drive' do
     expect(page).to have_content('Drive deleted')
   end
 
+  scenario 'with exisitng checkouts' do
+    drive = create(:drive)
+    checkout = create(:checkout)
+    drive.checkouts << checkout
+
+    expect { drive.destroy }.to change { Checkout.count }
+  end
+
 end

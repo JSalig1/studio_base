@@ -1,4 +1,4 @@
-.user-controls {
+.user-controls, .user-controls-half-wide {
   @include outer-container;
   .pagination {
     cursor: default;
@@ -45,4 +45,8 @@
       overflow: hidden;
     }
 
+}
+
+.user-controls-half-wide {
+  max-width: 700px;
 }

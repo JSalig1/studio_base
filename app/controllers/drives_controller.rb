@@ -22,7 +22,7 @@ class DrivesController < ApplicationController
 
   def show
     @drive = find_drive
-    @checkouts = @drive.checkouts.order('updated_at DESC')
+    @checkouts = @drive.checkouts.paginate(page: params[:page], per_page: 6).order('updated_at DESC')
   end
 
   def edit
