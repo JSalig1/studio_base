@@ -3,15 +3,11 @@
     <%= render 'form_errors', target: @checkout %>
     <%= form.label 'Checked out by:' %>
     <%= form.text_field :borrower %>
-    <%= form.label 'Checkout date:' %>
-    <%= form.date_field :date %>
     <%= form.label 'Purpose:' %>
     <%= form.text_area :purpose, placeholder: 'Purpose' %>
     <% if @checkout.returned? %>
       <%= form.label 'Returned by:' %>
       <%= form.text_field :returner %>
-      <%= form.label 'Return date:' %>
-      <%= form.date_field :return_date %>
     <% end %>
     <%= form.submit %>
   <% end %>

@@ -1,6 +1,6 @@
 class CheckoutsController < ApplicationController
 
-  before_action :authorize
+  before_action :authorize, except: [:show]
 
   def new
     @drive = Drive.find(params[:drive_id])

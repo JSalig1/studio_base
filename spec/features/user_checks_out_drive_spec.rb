@@ -13,7 +13,6 @@ feature 'user checks out a drive' do
     click_on('New')
     fill_in 'checkout_borrower',  with: "Person's Name"
     fill_in 'checkout_purpose',  with: 'Why they checked out the drive'
-    fill_in 'checkout_date',  with: Date.today
     click_on('Checkout')
 
     expect(page).to have_content('Drive checked out successfully')
@@ -26,7 +25,6 @@ feature 'user checks out a drive' do
 
     click_on('New')
     fill_in 'checkout_borrower',  with: ''
-    fill_in 'checkout_date',  with: Date.today
     click_on('Checkout')
 
     expect(page).to have_content("can't be blank")

@@ -1,4 +1,7 @@
 class CheckinsController < ApplicationController
+
+  before_action :authorize
+
   def edit
     @checkout = Checkout.find(params[:id])
   end

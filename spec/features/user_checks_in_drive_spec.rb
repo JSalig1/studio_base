@@ -13,7 +13,6 @@ feature 'user checks in a drive' do
     click_on('Return')
 
     fill_in 'checkout_returner',  with: "Returner's Name"
-    fill_in 'checkout_return_date',  with: Date.today
     click_on('Return')
 
     expect(page).to have_content('Drive checked in successfully')
