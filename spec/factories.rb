@@ -3,7 +3,7 @@ FactoryGirl.define do
   factory :checkout do
     borrower "borrower name"
     status "Checked Out"
-    date Date.today
+    borrow_date DateTime.now
     purpose "special notes"
     drive
   end

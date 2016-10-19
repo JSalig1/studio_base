@@ -5,7 +5,7 @@
     <%= form.text_field :borrower, value: current_user.name_first_last %>
     <%= form.label 'Purpose:' %>
     <%= form.text_area :purpose, placeholder: 'Purpose' %>
-    <%= form.hidden_field :date, value: Date.today %>
+    <%= form.hidden_field :borrow_date, value: DateTime.now %>
     <%= form.hidden_field :status, value: 'Checked Out' %>
     <%= form.submit 'Checkout' %>
   <% end %>

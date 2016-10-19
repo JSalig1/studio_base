@@ -16,6 +16,6 @@ class CheckinsController < ApplicationController
   private
 
   def checkout_params
-    params.require(:checkout).permit(:borrower, :purpose, :date, :status, :returner, :return_date)
+    params.require(:checkout).permit(:borrower, :purpose, :borrow_date, :status, :returner, :return_date)
   end
 end
