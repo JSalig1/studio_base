@@ -3,12 +3,12 @@ class CheckoutsController < ApplicationController
   before_action :authorize, except: [:show]
 
   def new
-    @drive = Drive.find(params[:drive_id])
+    @drive = find_drive
     @checkout = @drive.checkouts.new
   end
 
   def create
-    @drive = Drive.find(params[:drive_id])
+    @drive = find_drive
     @checkout = @drive.checkouts.new(checkout_params)
     if @checkout.save
       flash[:notice] = 'Drive checked out successfully'
@@ -19,21 +19,25 @@ class CheckoutsController < ApplicationController
   end
 
   def show
-    @checkout = Checkout.find(params[:id])
+    @checkout = find_checkout
   end
 
   def edit
-    @checkout = Checkout.find(params[:id])
+    @checkout = find_checkout
   end
 
   def update
-    checkout = Checkout.find(params[:id])
-    checkout.update_attributes(checkout_params)
-    redirect_to checkout
+    checkout = find_checkout
+    if checkout.update_attributes(checkout_params)
+      redirect_to checkout
+    else
+      @checkout = checkout
+      render :edit
+    end
   end
 
   def destroy
-    checkout = Checkout.find(params[:id])
+    checkout = find_checkout
     drive = checkout.drive
     checkout.destroy
     flash[:notice] = 'Checkout deleted'
@@ -41,6 +45,14 @@ class CheckoutsController < ApplicationController
   end
 
   private
+
+  def find_checkout
+    Checkout.find(params[:id])
+  end
+
+  def find_drive
+    Drive.find(params[:drive_id])
+  end
 
   def checkout_params
     params.require(:checkout).permit(:borrower, :purpose, :borrow_date, :status, :returner, :return_date)

@@ -10,8 +10,6 @@ feature 'user edits a checkout' do
 
     setup
 
-    click_on('borrower name')
-    click_on('Edit')
     fill_in 'checkout_borrower', with: 'other person'
     click_on('Update Checkout')
 
@@ -20,6 +18,12 @@ feature 'user edits a checkout' do
 
   scenario 'with invalid data' do
 
+    setup
+
+    fill_in 'checkout_borrower', with: ''
+    click_on('Update Checkout')
+
+    expect(page).to have_content("can't be blank")
   end
 
   private
@@ -29,6 +33,9 @@ feature 'user edits a checkout' do
     checkout = create(:checkout)
     drive.checkouts << checkout
     visit drive_path(drive)
+
+    click_on('borrower name')
+    click_on('Edit')
   end
 
 end

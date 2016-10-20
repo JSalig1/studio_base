@@ -2,6 +2,19 @@
   <h2>Checkout for:</h2>
   <h3><%= link_to @checkout.drive.name, @checkout.drive %></h3>
 
-  <%= render 'return' %>
+  <div>
+    <%= form_for [@drive, @checkout] do |form| %>
+      <%= render 'form_errors', target: @checkout %>
+      <%= form.label 'Checked out by:' %>
+      <%= form.text_field :borrower %>
+      <%= form.label 'Purpose:' %>
+      <%= form.text_area :purpose, placeholder: 'Purpose' %>
+      <% if @checkout.returned? %>
+        <%= form.label 'Returned by:' %>
+        <%= form.text_field :returner %>
+      <% end %>
+      <%= form.submit %>
+    <% end %>
+  </div>
 
 </div>
