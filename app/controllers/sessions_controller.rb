@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       flash[:notice] = "Invalid Login"
-      redirect_to root_path
+      redirect_to signin_path
     end
   end
 
