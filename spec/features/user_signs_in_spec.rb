@@ -22,6 +22,12 @@ feature 'user signs in' do
     expect(page).to have_content('Invalid Login')
     expect(page).to have_content('Username:')
   end
+
+  scenario 'because they were redirected' do
+    visit new_drive_path
+
+    expect(page).to have_content('Please Login')
+  end
 end
 
 

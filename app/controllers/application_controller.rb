@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
 
   def authorize
     unless current_user
+      flash[:notice] = "Please Login"
       render template: "sessions/new"
     end
   end
