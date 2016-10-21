@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     if ldap_user
       user = User.return_and_create_from_adauth(ldap_user)
       session[:user_id] = user.id
+      flash[:notice] = "Login Successful"
       redirect_to root_path
     else
       flash[:notice] = "Invalid Login"
