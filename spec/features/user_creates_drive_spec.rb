@@ -6,6 +6,10 @@ feature 'user creates a drive' do
     sign_in_adauth
   end
 
+  before :each do
+    ActionMailer::Base.deliveries.clear
+  end
+
   scenario 'successfully' do
     visit drives_path
 
@@ -16,6 +20,7 @@ feature 'user creates a drive' do
     click_on('Create Drive')
 
     expect(page).to have_content('Drive Name')
+    expect(ActionMailer::Base.deliveries.count).not_to eq(0)
   end
 
   scenario 'with invalid data' do
@@ -26,6 +31,7 @@ feature 'user creates a drive' do
     click_on('Create Drive')
 
     expect(page).to have_content("can't be blank")
+    expect(ActionMailer::Base.deliveries.count).to eq(0)
   end
 
 end

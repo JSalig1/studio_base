@@ -13,6 +13,7 @@ class DrivesController < ApplicationController
   def create
     drive = Drive.new(drive_params)
     if drive.save
+      current_user.notify_created(drive)
       redirect_to drive
     else
       @drive = drive
