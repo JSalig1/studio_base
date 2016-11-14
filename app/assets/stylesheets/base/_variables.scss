@@ -39,7 +39,7 @@ $navigation-active-link-color: transparentize(white, 0.5);
 // Backgrounds
 $base-background-color: #fff;
 $table-header-background: lighten($base-background-color, 10);
-$table-hover-background: darken($base-background-color, 2);
+$table-hover-background: darken($base-background-color, 4);
 $navigation-background: $dark-gray;
 
 // Border

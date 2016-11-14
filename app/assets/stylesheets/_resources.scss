@@ -52,6 +52,16 @@ section.half--wide {
       border-bottom: 0px;
       border-top: $base-border;
       word-wrap: break-word;
+      a {
+        display: block;
+        padding-top: 1.5em;
+        padding-bottom: 1.5em;
+        padding-left: 1em;
+      }
     }
   }
+}
+
+.narrow-column {
+  width: 12em;
 }

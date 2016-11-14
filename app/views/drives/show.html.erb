@@ -9,8 +9,11 @@
     <li>Project: <%= @drive.project %></li>
     <li>Brand: <%= @drive.brand %></li>
     <li>Capacity: <%= "#{@drive.capacity} TB" %></li>
-    <li>Location: <%= @drive.location %></li>
-    <li>Notes: <%= @drive.notes %></li>
+    <li>Location: <%= @drive.location %></li><br>
+    <li>Date Created: <%= @drive.date_created %></li><br>
+    <% if @drive.notes? %>
+      <li>Notes: <%= @drive.notes %></li>
+    <% end %>
   </ul>
 
   <%= button_to 'Edit', edit_drive_path(@drive), method: 'get' %>

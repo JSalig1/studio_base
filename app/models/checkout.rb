@@ -28,6 +28,6 @@ class Checkout < ActiveRecord::Base
   private
 
   def date_time_format
-    "%a %b %e, %Y, %l:%M%P"
+    "%a, %b %e, %Y, %l:%M%P"
   end
 end

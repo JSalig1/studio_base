@@ -20,6 +20,7 @@ feature 'user creates a drive' do
     click_on('Create Drive')
 
     expect(page).to have_content('Drive Name')
+    expect(page).to have_content('Date Created')
     expect(ActionMailer::Base.deliveries.count).not_to eq(0)
   end
 

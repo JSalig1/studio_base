@@ -1,6 +1,6 @@
 <tr>
-  <td><div><%= link_to "#{drive.name}", drive %></div></td>
-  <td><%= drive.project %></td>
-  <td><%= drive.location %></td>
-  <td><%= button_to "View", drive, method: "get" %></td>
+  <td><%= link_to "#{drive.name}", drive %></td>
+  <td><%= link_to "#{drive.project}", drive %></td>
+  <td><%= link_to "#{drive.location}", drive %></td>
+  <td><%= link_to "#{drive.date_created}", drive %></td>
 </tr>

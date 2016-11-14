@@ -18,6 +18,10 @@ class Drive < ActiveRecord::Base
     checkouts.find_by status: 'Checked Out'
   end
 
+  def date_created
+    created_at.strftime(date_format)
+  end
+
   private
 
   def generate_qr_code
@@ -26,6 +30,10 @@ class Drive < ActiveRecord::Base
 
   def unique
     ENV['HOST_DOMAIN'] + url_helpers.drive_path(self)
+  end
+
+  def date_format
+    "%a, %b %e, %Y"
   end
 
 end
