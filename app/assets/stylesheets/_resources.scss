@@ -16,6 +16,10 @@ section.half--wide {
   @include span-columns(6);
   @include shift(3);
   margin-top: 1em;
+  td a {
+    display: block;
+    padding-left: 1em;
+  }
 }
 
 .admin-controls {
@@ -23,27 +27,26 @@ section.half--wide {
   font-size: $base-font-size * .9;
 }
 
+tbody {
+  tr:hover > td, tr:hover > th {
+    background-color: $table-hover-background;
+  }
+  tr:first-child td {
+    border-top: 2px solid $base-border-color;
+  }
+}
+
+thead {
+  th {
+    border-bottom: 0px;
+    text-align: left;
+  }
+}
+
 .table-minimal {
   border-collapse: separate;
   border-spacing: 0;
   width: 100%;
-
-  tbody {
-    tr:hover > td, tr:hover > th {
-      background-color: $table-hover-background;
-    }
-    tr:first-child td {
-      border-top: 2px solid $base-border-color;
-    }
-  }
-
-  thead {
-    th {
-      border-bottom: 0px;
-      text-align: left;
-    }
-  }
-
   tbody {
     tr {
       height: 4.5em;
