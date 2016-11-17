@@ -19,9 +19,8 @@ StudioBase is an asset tracking web app built with Ruby on Rails.
 
 ### Deployed internally
 
-  - Git
-  - Unicorn
-  - NGINX
-  - System-D
+  - VirtualBox
   - CentOS
-  - VirtualBox.
+  - System-D
+  - NGINX
+  - Unicorn
