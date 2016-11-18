@@ -1,11 +1,11 @@
 <div>
   <%= form_for @drive do |form| %>
     <%= render 'form_errors', target: @drive %>
-    <%= form.label 'Name:' %>
+    <%= form.label 'Drive Name:' %>
     <%= form.text_field :name, placeholder: 'Required' %>
     <%= form.label 'For Project:' %>
     <%= form.text_field :project, placeholder: 'Number and Name' %>
-    <%= form.label 'Brand:' %>
+    <%= form.label 'Drive Brand:' %>
     <%= form.text_field :brand, placeholder: 'Brand' %>
     <%= form.label "Capacity in Terabytes (TB):" %>
     <%= form.number_field :capacity, step: 0.5, placeholder: '2.0 TB' %>
